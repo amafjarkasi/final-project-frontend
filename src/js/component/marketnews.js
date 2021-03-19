@@ -3,44 +3,51 @@ import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-rou
 const finnhub = require("finnhub");
 
 const api_key = finnhub.ApiClient.instance.authentications["api_key"];
-api_key.apiKey = "sandbox_c0vsqsv48v6t383lq1l0";
+api_key.apiKey = "c0vsqsv48v6t383lq1kg";
 const finnhubClient = new finnhub.DefaultApi();
 
 export const MarketNews = () => {
-	const [getNews, setGetNews] = useState({});
-
+	const [getNews, setGetNews] = useState([]);
 	useEffect(() => {
 		finnhubClient.generalNews("business", {}, (error, data, response) => {
-			setGetNews(data);
-			console.log(response.body);
+			setGetNews(response.body);
 		});
 	}, []);
-
-	function IterrateNews() {
-		// return "Hello";
-		getNews.map((news, index) => {
-			return (
-				<div className="row" key={index}>
-					<article className="media pb-2">
-						<figure className="media-left">
-							<p className="image is-32x32">
-								<img src={news.image} />
-							</p>
-						</figure>
-						<div className="media-content">
-							<div className="content">
-								<p>
-									<strong>{news.headline}</strong>
-									<br />
-									{news.summary}
-								</p>
-							</div>
-						</div>
-					</article>
+	const result = getNews.filter(article => article.category == "business");
+	console.log("$$", result);
+	return (
+		<>
+			<div className="rows">
+				<div className="row">
+					{result.map((news, index) => {
+						if (index < 5) {
+							return (
+								<article className="media" key={index}>
+									<figure className="media-left">
+										<p className="image is-128x128">
+											<img src={news.image} />
+										</p>
+									</figure>
+									<div className="media-content">
+										<div className="content">
+											<p>
+												<a href={news.url} rel="noreferrer" target="_blank">
+													<strong>{news.headline}</strong>
+												</a>
+												<br />
+												{news.summary}
+											</p>
+										</div>
+									</div>
+								</article>
+							);
+						}
+					})}
 				</div>
-			);
-		});
-	}
-
-	return <div className="rows">{getNews != null ? <IterrateNews /> : "Loading..."}</div>;
+			</div>
+		</>
+	);
 };
+
+//return <div className="rows">{getNews != null ? <IterrateNews /> : "Loading..."}</div>;
+// };

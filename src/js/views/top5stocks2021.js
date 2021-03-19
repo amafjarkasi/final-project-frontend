@@ -8,7 +8,7 @@ export const top5Stocks2021 = () => {
 	const [data, setData] = useState([]);
 	const [comparisons, setComparisons] = useState([]);
 	const [analyze, setAnalyze] = useState([]);
-	const apikey = "262c745fe3c5212a43505988b53267ad";
+	const apikey = process.env.FMP_API_GLOBAL;
 
 	useEffect(() => {
 		fetch(fmp_url + `api/v3/stock/gainers?apikey=${apikey}`, {

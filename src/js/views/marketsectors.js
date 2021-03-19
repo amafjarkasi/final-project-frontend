@@ -7,7 +7,7 @@ const fmp_url = "https://financialmodelingprep.com/";
 export const MarketSectors = () => {
 	const [data, setData] = useState([]);
 	const [comparisons, setComparisons] = useState([]);
-	const apikey = "262c745fe3c5212a43505988b53267ad";
+	const apikey = process.env.FMP_API_GLOBAL;
 
 	useEffect(() => {
 		fetch(fmp_url + `api/v3/sectors-performance?apikey=${apikey}`, {

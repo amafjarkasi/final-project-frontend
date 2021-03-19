@@ -13,7 +13,6 @@ export const AggIndicator = props => {
 
 	function analyzeADX(adx) {
 		var adxcalculate = parseInt(adx);
-		console.log(adxcalculate);
 
 		if (adxcalculate <= "25") {
 			//return "<i className=fas fa-exclamation-triangle>Weak Trend</i>";
