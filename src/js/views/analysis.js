@@ -112,7 +112,9 @@ export const Analysis = props => {
 								</tbody>
 							</table>
 							<div className="pt-4 pb-3 is-10-tablet">
-								<h5 className="title is-5">News Sentiment</h5>
+								<h5 className="title is-5">
+									<u>News Sentiment</u>
+								</h5>
 								<p className="pb-2">
 									One approach to analysis: tracking event-driven news. With computer reading of news
 									on the rise, Wall Street is changing how reporting is digested. Many hedge funds and
@@ -123,7 +125,7 @@ export const Analysis = props => {
 
 								{/* style="border: 1px solid #e0e3eb;" */}
 							</div>
-							<div className="pt-4 pb-3 is-10-tablet">
+							<div className="pt-5 pb-3 is-10-tablet">
 								<h5 className="title is-5">Aggregate Indicators</h5>
 								<p className="pb-2">
 									Trading in the direction of a strong trend reduces risk and increases profit
@@ -135,7 +137,7 @@ export const Analysis = props => {
 
 								{/* style="border: 1px solid #e0e3eb;" */}
 							</div>
-							<div className="pt-4 pb3 is-10-tablet">
+							<div className="pt-5 pb-3 is-10-tablet">
 								<h5 className="title is-5">Technical Indicators</h5>
 								<p>
 									Chart patterns are a subjective form of technical analysis where technicians attempt
@@ -154,13 +156,15 @@ export const Analysis = props => {
 								/>
 								{/* style="border: 1px solid #e0e3eb;" */}
 							</div>
-							<div className="pt-4 pb-3 is-10-tablet">
+							<div className="pt-5 pb-3 is-10-tablet">
 								<h5 className="title is-5">Key Executives</h5>
-								<p className="pb-2">
-									Trading in the direction of a strong trend reduces risk and increases profit
-									potential. The average directional index (ADX) is used to determine when the price
-									is trending strongly. In many cases, it is the ultimate trend indicator. This is
-									examining the value of ADX as a trend strength indicator.
+								<p className="pb-1">
+									Key Executives means those employees of the company who are deemed to hold positions
+									which may substantially influence the attainment of performance goals. Employees
+									designated as key employees for the Annual Bonus and/or Long Term Bonus purposes,
+									may or may not, in the discretion of the Committee be eligible to earn Incentive
+									Compensation under the other portion of this Plan and may or may not be eligible to
+									earn Incentive Compensation in future years under any portion of this Plan.
 								</p>
 								<KeyExecutives name={props.match.params.tickerSymbol} />
 
