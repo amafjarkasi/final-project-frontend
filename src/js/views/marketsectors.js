@@ -5,6 +5,7 @@ import { NavbarLeft } from "../component/navbarleft";
 const fmp_url = "https://financialmodelingprep.com/";
 
 export const MarketSectors = () => {
+	const _ = require("lodash");
 	const [data, setData] = useState([]);
 	const [comparisons, setComparisons] = useState([]);
 	const apikey = process.env.FMP_API_GLOBAL;
@@ -82,7 +83,7 @@ export const MarketSectors = () => {
 																<td>{value.sector}</td>
 																<td>{value.changesPercentage}</td>
 																<td>
-																	<button className="button is-info is-small fas fa-chart-line" />
+																	<button className="button is-success is-small fas fa-chart-line" />
 																</td>
 															</tr>
 														);

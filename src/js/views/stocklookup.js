@@ -15,20 +15,36 @@ export const StockLookup = () => {
 		if (!hideBuy) {
 			sethideBuy(false);
 			return (
-				<p className="control is-medium">
-					<Link to={`/buy/${stocksymbol}`}>
-						<button
-							className="button is-medium is-info"
-							type="button"
-							data-toggle="tooltip"
-							data-placement="top"
-							title="Buy">
-							<span className="icon">
-								<i className="fas fa-money-bill-wave" />
-							</span>
-						</button>
-					</Link>
-				</p>
+				<>
+					<p className="control is-medium">
+						<Link to={`/buy/${stocksymbol}`}>
+							<button
+								className="button is-medium is-primary"
+								type="button"
+								data-toggle="tooltip"
+								data-placement="top"
+								title="Buy">
+								<span className="icon">
+									<i className="fas fa-money-bill-wave" />
+								</span>
+							</button>
+						</Link>
+					</p>
+					<p className="control is-medium">
+						<Link to={`/analysis/${stocksymbol}`}>
+							<button
+								className="button is-medium is-success"
+								type="button"
+								data-toggle="tooltip"
+								data-placement="top"
+								title="Analysis">
+								<span className="icon">
+									<i className="fas fa-chart-line" />
+								</span>
+							</button>
+						</Link>
+					</p>
+				</>
 			);
 		} else {
 			sethideBuy(true);

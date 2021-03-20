@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link, NavLink, useParams } from
 import { NavbarLeft } from "../component/navbarleft";
 import { AggIndicator } from "../component/aggindicator";
 import { CompanySentiment } from "../component/companysentiment";
+import { KeyExecutives } from "../component/keyexecutives";
 import PropTypes from "prop-types";
 
 const fmp_url = "https://financialmodelingprep.com/";
@@ -20,7 +21,7 @@ export const Analysis = props => {
 		return (
 			<Link to={`/buy/${symbol}`}>
 				<button
-					className="button is-small is-info mt-1"
+					className="button is-small is-primary mt-1"
 					type="button"
 					data-toggle="tooltip"
 					data-placement="top"
@@ -151,6 +152,18 @@ export const Analysis = props => {
 									src={`https://widget.finnhub.io/widgets/stocks/chart?symbol=${symbol}&watermarkColor=white&backgroundColor=white&textColor=black`}
 									title={`${symbol} Data by Finnhub Stock API`}
 								/>
+								{/* style="border: 1px solid #e0e3eb;" */}
+							</div>
+							<div className="pt-4 pb-3 is-10-tablet">
+								<h5 className="title is-5">Key Executives</h5>
+								<p className="pb-2">
+									Trading in the direction of a strong trend reduces risk and increases profit
+									potential. The average directional index (ADX) is used to determine when the price
+									is trending strongly. In many cases, it is the ultimate trend indicator. This is
+									examining the value of ADX as a trend strength indicator.
+								</p>
+								<KeyExecutives name={props.match.params.tickerSymbol} />
+
 								{/* style="border: 1px solid #e0e3eb;" */}
 							</div>
 						</div>

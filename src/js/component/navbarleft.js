@@ -33,6 +33,16 @@ export const NavbarLeft = () => {
 							</NavLink>
 						</li>
 						<li>
+							<NavLink to="/marketsectors" activeClassName="is-active">
+								Market Sectors
+							</NavLink>
+						</li>
+						<li>
+							<NavLink to="/mostactives" activeClassName="is-active">
+								Most Actives
+							</NavLink>
+						</li>
+						<li>
 							<NavLink to="/mostgainer" activeClassName="is-active">
 								Most Gainer
 							</NavLink>
@@ -42,30 +52,7 @@ export const NavbarLeft = () => {
 								Most Loser
 							</NavLink>
 						</li>
-						{/* <li>
-							<a>Manage Your Team</a>
-							<ul>
-								<li>
-									<a>Members</a>
-								</li>
-								<li>
-									<a>Plugins</a>
-								</li>
-								<li>
-									<a>Add a member</a>
-								</li>
-							</ul>
-						</li> */}
-						<li>
-							<NavLink to="/mostactives" activeClassName="is-active">
-								Most Actives
-							</NavLink>
-						</li>
-						<li>
-							<NavLink to="/marketsectors" activeClassName="is-active">
-								Market Sectors
-							</NavLink>
-						</li>
+
 						{/* <li>
 							<NavLink to="/top5stocks2021" activeClassName="is-active">
 								Top 5 Stocks 2021

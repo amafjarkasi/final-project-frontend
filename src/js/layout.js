@@ -13,6 +13,7 @@ import { NavbarLeft } from "./component/navbarleft";
 import { Footer } from "./component/footer";
 import { AggIndicator } from "./component/aggindicator";
 import { MarketNews } from "./component/marketnews";
+import { KeyExecutives } from "./component/keyexecutives";
 
 import injectContext from "./store/appContext";
 import { Dashboard } from "./views/dashboard";
