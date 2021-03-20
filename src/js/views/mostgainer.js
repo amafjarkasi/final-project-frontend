@@ -54,7 +54,7 @@ export const MostGainer = () => {
 							<br />
 							<div className="container pt-6 pr-7">
 								<div className="columns is-desktop">
-									<table className="table is-fullwidth">
+									<table className="table is-fullwidth is-striped is-hoverable-is-striped">
 										<thead className="thead-dark is-fullwidth">
 											<tr>
 												<th scope="col" />
@@ -87,12 +87,16 @@ export const MostGainer = () => {
 																<td>{value.changes}</td>
 																<td>{value.price}</td>
 																<td>{value.changesPercentage}</td>
-																<td>{value.companyName.slice(0, 25) + "..."}</td>
+																<td>
+																	{value.companyName.length > 30
+																		? value.companyName.slice(0, 30) + "..."
+																		: value.companyName}
+																</td>
 																<td>
 																	<Link to={`/buy/${value.ticker}`}>
 																		<button
 																			type="button"
-																			className="button is-info is-small fas fa-money-bill-wave"
+																			className="button is-primary is-small fas fa-money-bill-wave"
 																		/>
 																	</Link>
 																</td>
@@ -100,9 +104,7 @@ export const MostGainer = () => {
 																	<Link to={`/analysis/${value.ticker}`}>
 																		<button
 																			type="button"
-																			className="button is-info is-small fas fa-chart-line">
-																			+
-																		</button>
+																			className="button is-success is-small fas fa-chart-line"></button>
 																	</Link>
 																</td>
 															</tr>
