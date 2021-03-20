@@ -161,10 +161,9 @@ export const Analysis = props => {
 								<p className="pb-1">
 									Key Executives means those employees of the company who are deemed to hold positions
 									which may substantially influence the attainment of performance goals. Employees
-									designated as key employees for the Annual Bonus and/or Long Term Bonus purposes,
-									may or may not, in the discretion of the Committee be eligible to earn Incentive
-									Compensation under the other portion of this Plan and may or may not be eligible to
-									earn Incentive Compensation in future years under any portion of this Plan.
+									designated as key employees for the annual bonus and/or long term bonus purposes.
+									They may be eligible to earn incentive compensation under the other portion of this
+									plan and earn incentive compensation in future years.
 								</p>
 								<KeyExecutives name={props.match.params.tickerSymbol} />
 

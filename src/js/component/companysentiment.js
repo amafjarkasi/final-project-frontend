@@ -13,24 +13,8 @@ export const CompanySentiment = props => {
 	const [getBuzz, setBuzz] = useState({});
 	const [getCompany, setCompany] = useState();
 
-	// function analyzeADX(adx) {
-	// 	var adxcalculate = parseInt(adx);
-	// 	console.log(adxcalculate);
-
-	// 	if (adxcalculate <= "25") {
-	// 		//return "<i className=fas fa-exclamation-triangle>Weak Trend</i>";
-	// 		return "Weak ADX Trend";
-	// 	} else if (adxcalculate > "25" && adxcalculate <= "50") {
-	// 		//return "<i className=fas fa-check-square>Strong Trend</i>";
-	// 		return "Strong ADX Trend";
-	// 	} else if (adxcalculate > "50" && adxcalculate <= "75") {
-	// 		return "Very Strong ADX Trend";
-	// 	} else {
-	// 		return "Extremely Strong ADX Trend";
-	// 	}
-	// }
-
 	useEffect(() => {
+		//const stocksymbol = _.replace(props.name, "-", "");
 		finnhubClient.newsSentiment(`${props.name}`, (error, data, response) => {
 			setSentiment(response.body.sentiment);
 			setBuzz(response.body.buzz);
@@ -39,16 +23,16 @@ export const CompanySentiment = props => {
 	}, []);
 
 	function BearSentiment() {
-		if (getSentiment != null) return _.round(getSentiment.bearishPercent * 100);
+		return getSentiment != null ? _.round(getSentiment.bearishPercent * 100) + "%" : "N/A";
 	}
 	function BullSentiment() {
-		if (getSentiment != null) return _.round(getSentiment.bullishPercent * 100);
+		return getSentiment != null ? _.round(getSentiment.bullishPercent * 100) + "%" : "N/A";
 	}
 	function BuzzSentiment() {
-		if (getBuzz != null) return _.round(getBuzz.buzz * 100);
+		return getBuzz != null ? _.round(getBuzz.buzz * 100) + "%" : "N/A";
 	}
 	function CompSentiment() {
-		if (getCompany != null) return _.round(getCompany * 100);
+		return getCompany != null ? _.round(getCompany * 100) + "%" : "N/A";
 	}
 
 	return (
@@ -57,32 +41,28 @@ export const CompanySentiment = props => {
 				<p>
 					<i className="fas fa-circle has-text-primary" />
 					{` Current Buzz/Weekly Average:`}{" "}
-					<strong className="has-text-primary">{getBuzz != null ? <BuzzSentiment /> : "Loading"}%</strong>
+					<strong className="has-text-primary">
+						<BuzzSentiment />
+					</strong>
 					<br />
 					<i className="fas fa-circle has-text-danger" />
 					{` Bearish Sentiment:`}{" "}
-					<strong className="has-text-danger">{getSentiment != null ? <BearSentiment /> : "Loading"}%</strong>
+					<strong className="has-text-danger">
+						<BearSentiment />
+					</strong>
 					<br />
 					<i className="fas fa-circle has-text-info" />
-					{` Company Sentiment:`} <strong className="has-text-info">{_.round(getCompany * 100)}%</strong>
+					{` Company Sentiment:`}{" "}
+					<strong className="has-text-info">
+						<CompSentiment />
+					</strong>
 					<br />
 					<i className="fas fa-circle has-text-success" />
 					{` Bullish Sentiment:`}{" "}
 					<strong className="has-text-success">
-						{getSentiment != null ? <BullSentiment /> : "Loading"}%
+						<BullSentiment />
 					</strong>
 					<br />
-					{/* <i className="fas fa-check has-text-success" />
-					&nbsp;
-					{getTrend.adx != null ? `${analyzeADX(getTrend.adx)}` : "Loading..."}
-					<br />
-					<i className="fas fa-thumbs-up has-text-info" />
-					&nbsp;
-					{`${_.upperFirst(getTechAnalysis.signal)} Purchase Signal`}
-					<br />
-					<i className="fas fa-chart-bar has-text-danger" />
-					&nbsp;
-					{getTrend.trending ? "Trending Up" : "Not Trending Up"} */}
 				</p>
 			</div>
 		</>

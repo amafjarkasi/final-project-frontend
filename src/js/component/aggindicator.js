@@ -39,11 +39,11 @@ export const AggIndicator = props => {
 				<p>
 					<i className="fas fa-check has-text-success" />
 					&nbsp;
-					{getTrend.adx != null ? `${analyzeADX(getTrend.adx)}` : "Loading..."}
+					{getTrend.adx != null ? `${analyzeADX(getTrend.adx)}` : "N/A"}
 					<br />
 					<i className="fas fa-thumbs-up has-text-info" />
 					&nbsp;
-					{`${_.upperFirst(getTechAnalysis.signal)} Purchase Signal`}
+					{getTechAnalysis.signal != "" ? _.upperFirst(getTechAnalysis.signal) + " Purchase Signal" : "N/A"}
 					<br />
 					<i className="fas fa-chart-bar has-text-danger" />
 					&nbsp;
