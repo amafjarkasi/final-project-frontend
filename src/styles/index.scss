@@ -12,6 +12,11 @@
 @import "node_modules/bulma/bulma";
 @import "node_modules/bulmaswatch/spacelab/overrides";
 
+.table-striped>tr:nth-child(odd){
+   background-color:rgb(209, 209, 209);
+}
+
+
 .profile-image{
     display: flex;
     justify-content: center;

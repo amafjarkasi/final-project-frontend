@@ -54,7 +54,7 @@ export const MostGainer = () => {
 							<br />
 							<div className="container pt-6 pr-7">
 								<div className="columns is-desktop">
-									<table className="table is-fullwidth is-striped is-hoverable-is-striped">
+									<table className="table is-fullwidth">
 										<thead className="thead-dark is-fullwidth">
 											<tr>
 												<th scope="col" />
@@ -67,7 +67,7 @@ export const MostGainer = () => {
 												<th scope="col">Analysis</th>
 											</tr>
 										</thead>
-										<tbody>
+										<tbody className="table-striped">
 											{data
 												? data.map((value, index) => {
 														return (

@@ -63,7 +63,7 @@ export const MarketSectors = () => {
 												<th scope="col">Analysis</th>
 											</tr>
 										</thead>
-										<tbody>
+										<tbody className="table-striped">
 											{data
 												? data.map((value, index) => {
 														return (
