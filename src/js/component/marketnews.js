@@ -1,5 +1,31 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
+import { EmailShareButton, FacebookShareButton, TwitterShareButton, WhatsappShareButton } from "react-share";
+
+import {
+	EmailIcon,
+	FacebookIcon,
+	FacebookMessengerIcon,
+	HatenaIcon,
+	InstapaperIcon,
+	LineIcon,
+	LinkedinIcon,
+	LivejournalIcon,
+	MailruIcon,
+	OKIcon,
+	PinterestIcon,
+	PocketIcon,
+	RedditIcon,
+	TelegramIcon,
+	TumblrIcon,
+	TwitterIcon,
+	ViberIcon,
+	VKIcon,
+	WeiboIcon,
+	WhatsappIcon,
+	WorkplaceIcon
+} from "react-share";
+
 const finnhub = require("finnhub");
 
 const api_key = finnhub.ApiClient.instance.authentications["api_key"];
@@ -14,7 +40,6 @@ export const MarketNews = () => {
 		});
 	}, []);
 	const result = getNews.filter(article => article.category == "business");
-	console.log("$$", result);
 	return (
 		<>
 			<div className="rows">
@@ -22,8 +47,8 @@ export const MarketNews = () => {
 				{result.map((news, index) => {
 					if (index < 5) {
 						return (
-							<div className="row pb-0">
-								<article className="media is-small" key={index}>
+							<div className="row mb-0 pb-0">
+								<article className="media is-small mb-0 pb-0" key={index}>
 									<figure className="media-left">
 										<p className="image is-128x128">
 											<img src={news.image} />
@@ -37,6 +62,15 @@ export const MarketNews = () => {
 												</a>
 												<br />
 												{news.summary}
+												<br />
+												<div className="pt-3">
+													<TwitterShareButton url={news.url}>
+														<TwitterIcon size={24} round={false} />
+													</TwitterShareButton>
+													<EmailShareButton url={news.url}>
+														<EmailIcon size={24} round={false} />
+													</EmailShareButton>
+												</div>
 											</p>
 										</div>
 									</div>

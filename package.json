@@ -119,6 +119,7 @@
 		"react-polyfills": "0.0.1",
 		"react-router-dom": "^5.2.0",
 		"react-select": "^4.2.1",
+		"react-share": "^4.4.0",
 		"react-star-rating": "^1.4.2",
 		"react-star-rating-input": "^8.0.1",
 		"react-toggle": "^4.1.1",
