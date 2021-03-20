@@ -113,6 +113,7 @@ export const Analysis = props => {
 							</table>
 							<div className="pt-4 pb-3 is-10-tablet">
 								<h5 className="title is-5">
+									<i class="fas fa-check" />
 									<u>News Sentiment</u>
 								</h5>
 								<p className="pb-2">
@@ -125,8 +126,11 @@ export const Analysis = props => {
 
 								{/* style="border: 1px solid #e0e3eb;" */}
 							</div>
-							<div className="pt-5 pb-3 is-10-tablet">
-								<h5 className="title is-5">Aggregate Indicators</h5>
+							<div className="pt-6 pb-3 is-10-tablet">
+								<h5 className="title is-5">
+									<i class="fas fa-check" />
+									<u>Aggregate Indicators</u>
+								</h5>
 								<p className="pb-2">
 									Trading in the direction of a strong trend reduces risk and increases profit
 									potential. The average directional index (ADX) is used to determine when the price
@@ -137,8 +141,11 @@ export const Analysis = props => {
 
 								{/* style="border: 1px solid #e0e3eb;" */}
 							</div>
-							<div className="pt-5 pb-3 is-10-tablet">
-								<h5 className="title is-5">Technical Indicators</h5>
+							<div className="pt-6 pb-3 is-10-tablet">
+								<h5 className="title is-5">
+									<i class="fas fa-check" />
+									<u>Technical Indicators</u>
+								</h5>
 								<p>
 									Chart patterns are a subjective form of technical analysis where technicians attempt
 									to identify areas of support and resistance on a chart by looking at specific
@@ -156,9 +163,12 @@ export const Analysis = props => {
 								/>
 								{/* style="border: 1px solid #e0e3eb;" */}
 							</div>
-							<div className="pt-5 pb-3 is-10-tablet">
-								<h5 className="title is-5">Key Executives</h5>
-								<p className="pb-1">
+							<div className="pt-6 pb-2 is-10-tablet">
+								<h5 className="title is-5">
+									<i class="fas fa-check" />
+									<u>Key Executives</u>
+								</h5>
+								<p className="pb-0">
 									Key Executives means those employees of the company who are deemed to hold positions
 									which may substantially influence the attainment of performance goals. Employees
 									designated as key employees for the annual bonus and/or long term bonus purposes.
