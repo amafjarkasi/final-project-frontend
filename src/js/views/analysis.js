@@ -88,7 +88,9 @@ export const Analysis = props => {
 																: value.companyName}
 														</td>
 														<td>
-															${value.price === null ? "N/A" : value.price.toFixed(2)}
+															{value.price === null
+																? "N/A"
+																: "$" + value.price.toFixed(2)}
 														</td>
 														<td>{value.lastDiv === 0 ? "N/A" : value.lastDiv}</td>
 														<td>
@@ -98,7 +100,7 @@ export const Analysis = props => {
 														</td>
 														<td>{value.range === null ? "N/A" : value.range}</td>
 														<td>{value.beta === null ? "N/A" : value.beta}</td>
-														<td>{value.changes === null ? "N/A" : value.changes}</td>
+														<td>{value.changes === null ? "N/A" : value.changes + "%"}</td>
 														<td>{value.currency === null ? "N/A" : value.currency}</td>
 														<td>{value.address === "" ? "N/A" : value.address}</td>
 													</tr>

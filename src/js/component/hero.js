@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 
 export const Hero = () => (
-	<section className="hero is-info">
+	<section className="hero is-link">
 		<div className="hero-body">
 			<div className="container">
 				<div className="columns is-vcentered">
 					<div className="column is-6">
-						<h1 className="title is-spaced">The New Internet</h1>
+						<h1 className="title is-spaced">Financial Freedom</h1>
 						<p className="subtitle">
 							{`
-                            We've built a decentralized internet where information is totally free in every sense of the
-                            word.
+                            We've built a decentralized financial research app where information is totally free in every sense of the
+                            word and provides tools to help with your investment research.
                             `}
 						</p>
 						<div className="columns">
