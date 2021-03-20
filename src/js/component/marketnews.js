@@ -18,11 +18,11 @@ export const MarketNews = () => {
 	return (
 		<>
 			<div className="rows">
-				<div className="row">
-					{result.map((news, index) => {
-						if (index < 5) {
-							return (
-								<article className="media" key={index}>
+				{result.map((news, index) => {
+					if (index < 5) {
+						return (
+							<div className="row">
+								<article className="media is-small" key={index}>
 									<figure className="media-left">
 										<p className="image is-128x128">
 											<img src={news.image} />
@@ -40,10 +40,10 @@ export const MarketNews = () => {
 										</div>
 									</div>
 								</article>
-							);
-						}
-					})}
-				</div>
+							</div>
+						);
+					}
+				})}
 			</div>
 		</>
 	);

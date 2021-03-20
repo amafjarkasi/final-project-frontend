@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import InvestLogo from "../../img/InvestLogo.png";
 
@@ -7,8 +7,8 @@ export const Navbar = () => {
 		<nav className="navbar is-info pt-3 pb-3">
 			<div className="container">
 				<div className="navbar-brand is-active">
-					<a className="navbar-item image is-48x48" href="/">
-						<img src={InvestLogo} className="image is-48x48" />
+					<a className="navbar-item" href="/">
+						<i className="fas fa-ad"></i>
 					</a>
 					<a className="navbar-burger" role="button" aria-label="menu" aria-expanded="false">
 						<span aria-hidden="true" />
