@@ -73,7 +73,11 @@ export const NewsLookup = () => {
 											<div className="media-content">
 												<div className="content">
 													<p>
-														<a href={news.url} rel="noreferrer" target="_blank">
+														<a
+															href={news.url}
+															className="hvr-underline-from-center"
+															rel="noreferrer"
+															target="_blank">
 															<strong>{news.title}</strong>
 														</a>
 														<br />
