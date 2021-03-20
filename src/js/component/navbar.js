@@ -7,8 +7,8 @@ export const Navbar = () => {
 		<nav className="navbar is-info pt-3 pb-3">
 			<div className="container">
 				<div className="navbar-brand is-active">
-					<a className="navbar-item" href="/">
-						<img src={InvestLogo} width="50" height="150" />
+					<a className="navbar-item image is-48x48" href="/">
+						<img src={InvestLogo} className="image is-48x48" />
 					</a>
 					<a className="navbar-burger" role="button" aria-label="menu" aria-expanded="false">
 						<span aria-hidden="true" />
