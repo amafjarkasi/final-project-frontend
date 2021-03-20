@@ -113,7 +113,7 @@ export const Analysis = props => {
 							</table>
 							<div className="pt-4 pb-3 is-10-tablet">
 								<h5 className="title is-5">
-									<i class="fas fa-check" />
+									<i className="fas fa-check" />
 									<u>News Sentiment</u>
 								</h5>
 								<p className="pb-2">
@@ -128,7 +128,7 @@ export const Analysis = props => {
 							</div>
 							<div className="pt-6 pb-3 is-10-tablet">
 								<h5 className="title is-5">
-									<i class="fas fa-check" />
+									<i className="fas fa-check" />
 									<u>Aggregate Indicators</u>
 								</h5>
 								<p className="pb-2">
@@ -143,7 +143,7 @@ export const Analysis = props => {
 							</div>
 							<div className="pt-6 pb-3 is-10-tablet">
 								<h5 className="title is-5">
-									<i class="fas fa-check" />
+									<i className="fas fa-check" />
 									<u>Technical Indicators</u>
 								</h5>
 								<p>
@@ -165,7 +165,7 @@ export const Analysis = props => {
 							</div>
 							<div className="pt-6 pb-2 is-10-tablet">
 								<h5 className="title is-5">
-									<i class="fas fa-check" />
+									<i className="fas fa-check" />
 									<u>Key Executives</u>
 								</h5>
 								<p className="pb-0">
