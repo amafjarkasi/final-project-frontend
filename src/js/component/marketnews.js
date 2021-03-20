@@ -18,10 +18,11 @@ export const MarketNews = () => {
 	return (
 		<>
 			<div className="rows">
+				<h2 className="title">Market News</h2>
 				{result.map((news, index) => {
 					if (index < 5) {
 						return (
-							<div className="row">
+							<div className="row pb-0">
 								<article className="media is-small" key={index}>
 									<figure className="media-left">
 										<p className="image is-128x128">
