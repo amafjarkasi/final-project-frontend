@@ -47,7 +47,7 @@ export const MarketSectors = () => {
 										comparisons: comparisons
 									}
 								}}>
-								<button type="button" className="button is-warning">
+								<button type="button" className="button is-medium is-warning">
 									Compare
 								</button>
 							</Link>

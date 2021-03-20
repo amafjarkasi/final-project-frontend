@@ -66,16 +66,16 @@ export const NavbarLeft = () => {
 								Market Sectors
 							</NavLink>
 						</li>
-						<li>
+						{/* <li>
 							<NavLink to="/top5stocks2021" activeClassName="is-active">
 								Top 5 Stocks 2021
 							</NavLink>
-						</li>
+						</li> */}
 					</ul>
 					<p className="menu-label">Transactions</p>
 					<ul className="menu-list">
 						<li>
-							<a>Payments</a>
+							<a>History</a>
 						</li>
 						<li>
 							<a>Transfers</a>

@@ -5,8 +5,12 @@
 
 // @import 'node_modules/@creativebulma/bulma-collapsible';
 //@import '~@creativebulma/bulma-collapsible';
-@import "node_modules/bulma-responsive-tables/bulma-responsive-tables";
+// @import "node_modules/bulma-responsive-tables/bulma-responsive-tables";
 //@import "./bthemes/bulmaswatch.min-flatly.css";
+//spacelab
+@import "node_modules/bulmaswatch/spacelab/variables";
+@import "node_modules/bulma/bulma";
+@import "node_modules/bulmaswatch/spacelab/overrides";
 
 .profile-image{
     display: flex;

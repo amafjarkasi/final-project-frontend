@@ -25,13 +25,7 @@ export const MostActives = () => {
 				return resp.json();
 			})
 			.then(resp => {
-				//let store = getStore();
-				// store.user = {
-				// 	token: data.jwt,
-				// 	info: data.user
-				// };
 				setData(resp.mostActiveStock);
-				//setStore(store);
 				return true;
 			})
 			.catch(err => {
@@ -55,7 +49,7 @@ export const MostActives = () => {
 										comparisons: comparisons
 									}
 								}}>
-								<button type="button" className="button is-warning">
+								<button type="button" className="button is-medium is-warning">
 									Compare
 								</button>
 							</Link>
