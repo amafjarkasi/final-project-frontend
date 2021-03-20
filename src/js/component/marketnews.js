@@ -64,12 +64,18 @@ export const MarketNews = () => {
 												{news.summary}
 												<br />
 												<div className="pt-3">
-													<TwitterShareButton url={news.url}>
-														<TwitterIcon size={24} round={false} />
-													</TwitterShareButton>
-													<EmailShareButton url={news.url}>
+													<EmailShareButton className="pr-2" url={news.url}>
 														<EmailIcon size={24} round={false} />
 													</EmailShareButton>
+													<TwitterShareButton className="pr-2" url={news.url}>
+														<TwitterIcon size={24} round={false} />
+													</TwitterShareButton>
+													<FacebookShareButton className="pr-2" url={news.url}>
+														<FacebookIcon size={24} round={false} />
+													</FacebookShareButton>
+													<WhatsappShareButton className="pr-2" url={news.url}>
+														<WhatsappIcon size={24} round={false} />
+													</WhatsappShareButton>
 												</div>
 											</p>
 										</div>
