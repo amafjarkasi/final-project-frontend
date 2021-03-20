@@ -22,6 +22,7 @@ import { MostLoser } from "./views/mostloser";
 import { MostActives } from "./views/mostactives";
 import { Analysis } from "./views/analysis";
 import { StockLookup } from "./views/stocklookup";
+import { StockRating } from "./views/stockrating";
 import { NewsLookup } from "./views/newslookup";
 import { Buy } from "./views/buy";
 import { MarketSectors } from "./views/marketsectors";
@@ -57,6 +58,7 @@ const Layout = () => {
 						<Route exact path="/portfolio" component={Portfolio} />
 						<Route exact path="/marketnews" component={MarketNews} />
 						<Route exact path="/stocklookup" component={StockLookup} />
+						<Route exact path="/stockrating" component={StockRating} />
 						<Route exact path="/newslookup" component={NewsLookup} />
 						<Route path="/analysis/:tickerSymbol" component={Analysis} />
 						<Route path="/buy/:tickerSymbol" component={Buy} />

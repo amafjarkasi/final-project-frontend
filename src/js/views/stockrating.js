@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
+import { CircularProgressbar } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+import { Badge, Pane, Paragraph } from "evergreen-ui";
 
-const axios = require("axios");
+const fmp = require("financialmodelingprep")(process.env.FMP_API_GLOBAL);
 
-export const NewsLookup = () => {
-	const [stockfind, setStockFind] = useState();
+export const StockRating = () => {
+	const [stockfind, setStockFind] = useState([]);
+	const [ratingSymbol, setRatingSymbol] = useState([]);
 	const [results, setResults] = useState(false);
 	const [hideBuy, sethideBuy] = useState(true);
 	const [stocksymbol, setStockSymbol] = useState("");
-	const apikey = process.env.FMP_API_GLOBAL;
-	const fmp_url = process.env.FMP_API_URL;
 
 	function BuyStock() {
 		if (!hideBuy) {
@@ -54,56 +56,59 @@ export const NewsLookup = () => {
 	}
 
 	function LookupNews() {
-		var _ = require("lodash");
-
-		return (
-			<>
-				<div className="box is-borderless">
-					<div className="rows">
-						{stockfind.map((news, index) => {
-							return (
-								<>
-									<div className="row mb-0 pb-0">
-										<article className="media is-small mb-0 pb-0" key={index}>
-											<figure className="media-left">
-												<p className="image is-128x128">
-													<img src={news.image} />
-												</p>
-											</figure>
-											<div className="media-content">
-												<div className="content">
-													<p>
-														<a href={news.url} rel="noreferrer" target="_blank">
-															<strong>{news.title}</strong>
-														</a>
-														<br />
-
-														{news.text.length > 220
-															? news.text.slice(0, 220) + "..."
-															: news.text}
-													</p>
-												</div>
-											</div>
-										</article>
-									</div>
-								</>
-							);
-						})}
+		const value = stockfind.score;
+		if (value !== null) {
+			console.log(value);
+			return (
+				<>
+					<div className="box is-borderless">
+						<div className="rows">
+							<div className="row pb-1 pt-0">
+								<h4 className="title is-4 pb-3 is-spaced has-text-primary has-text-centered">
+									{ratingSymbol} - Consensus Rating
+								</h4>
+								<Paragraph size={400} marginTop="default" className="pb-2">
+									To reach an opinion and communicate the value and volatility of a covered security,
+									analysts research public financial statements, listen in on conference calls and
+									talk to managers and the customers of a company, typically in an attempt to come up
+									with findings for a research report. Analysts research public financial statements,
+									listen in on conference calls and talk to managers and the customers of a company.
+									Ultimately, through all this investigation into the companys performance, the
+									analyst decides whether the stock is a buy, sell, or hold.
+								</Paragraph>
+								<p>
+									<Pane
+										display="flex"
+										className="has-text-centered are-medium is-justify-content-center">
+										<Pane flexBasis={300} className="are-medium">
+											<Badge color="red" isSolid marginRight={8}>
+												Recommendation: {stockfind.recommendation}
+											</Badge>
+											<Badge color="blue" isSolid>
+												Rating: {stockfind.rating}
+											</Badge>
+										</Pane>
+									</Pane>
+								</p>
+							</div>
+							<div className="row mb-0 pt-4">
+								<div className="center-graph" style={{ width: 100, height: 100 }}>
+									<CircularProgressbar
+										className="center-graph"
+										value={value}
+										maxValue={5}
+										text={`${value}`}
+									/>
+								</div>
+							</div>
+						</div>
 					</div>
-				</div>
-			</>
-
-			//     )} else {
-			// 	sethideBuy(true);
-			// 	return (
-			// 		<div className="box">
-			// 			<div className="list">
-			// 				<h5 className="title is-5 pb-3 is-spaced has-text-danger">No Results</h5>
-			// 			</div>
-			// 		</div>
-			// 	);
-			// }
-		);
+				</>
+			);
+		} else {
+			sethideBuy(true);
+			setResults(false);
+		}
 	}
 
 	function clearStockLookup() {
@@ -111,26 +116,17 @@ export const NewsLookup = () => {
 		sethideBuy(true);
 		setResults(false);
 	}
-	// https://financialmodelingprep.com/api/v3/stock_news?tickers=AAPL&limit=50&apikey=990e5576342d94ae68643280da08fa5b
+
 	function handleStockLookup(e) {
 		if (stocksymbol != "") {
-			axios
-				.get(`${fmp_url}/api/v3/stock_news?tickers=${stocksymbol}&limit=10&apikey=${apikey}`)
-				.then(function(response) {
-					if (response.data.length) {
-						setStockFind(response.data);
-						setResults(true);
-						sethideBuy(false);
-					} else {
-						setResults(false);
-						sethideBuy(true);
-					}
-				})
-				.catch(function(error) {
-					console.log(error);
-				})
-				.then(function() {
-					// always executed
+			fmp.stock(`${stocksymbol}`)
+				.rating()
+				.then(response => {
+					var data_update = response;
+					setStockFind(data_update.rating);
+					setRatingSymbol(data_update.symbol);
+					setResults(true);
+					sethideBuy(false);
 				});
 		} else {
 			sethideBuy(true);
@@ -146,7 +142,7 @@ export const NewsLookup = () => {
 				<div className="column is-10-tablet">
 					<div className="container is-fluid pr-7">
 						<section className="section">
-							<h3 className="title is-3 pb-3 is-spaced">Company News Lookup</h3>
+							<h3 className="title is-3 pb-3 is-spaced">Analyst Rating Consensus</h3>
 							<div className="container pt-3 pr-7">
 								<div className="columns is-desktop">
 									<table className="table is-fullwidth">

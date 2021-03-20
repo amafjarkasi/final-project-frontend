@@ -33,6 +33,11 @@ export const NavbarLeft = () => {
 							</NavLink>
 						</li>
 						<li>
+							<NavLink to="/stockrating" activeClassName="is-active">
+								Stock Rating
+							</NavLink>
+						</li>
+						<li>
 							<NavLink to="/newslookup" activeClassName="is-active">
 								Company News
 							</NavLink>
