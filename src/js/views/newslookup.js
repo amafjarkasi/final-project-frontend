@@ -78,8 +78,8 @@ export const NewsLookup = () => {
 														</a>
 														<br />
 														{console.log(news.text.length)}
-														{news.text.length > 210
-															? news.text.slice(0, 210) + "..."
+														{news.text.length > 220
+															? news.text.slice(0, 220) + "..."
 															: news.text}
 													</p>
 												</div>
