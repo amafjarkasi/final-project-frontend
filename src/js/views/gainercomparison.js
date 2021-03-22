@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
 import PropTypes from "prop-types";
+const axios = require("axios");
 
 export const GainerComparison = props => {
 	const fmp_url = process.env.FMP_API_URL;
 	const apikey = process.env.FMP_API_GLOBAL;
 
-	const [getbatch, setBatch] = useState([]);
+	const [getBatch, setBatch] = useState([]);
 
 	const [getCompanies, setCompanies] = useState("");
 
@@ -37,23 +38,38 @@ export const GainerComparison = props => {
 		console.log("$$", globalSymbols);
 		const updatedSymbols = getStockData(globalSymbols);
 
-		fetch(fmp_url + `/api/v3/quote/${updatedSymbols}?apikey=${apikey}`)
-			.then(resp => {
-				if (!resp.ok) {
-					throw new Error(resp.statusText);
-				}
-				console.log("$json: ", resp.json());
-				return resp.json();
+		// 	fetch(fmp_url + `/api/v3/quote/${updatedSymbols}?apikey=${apikey}`)
+		// 		.then(resp => {
+		// 			if (!resp.ok) {
+		// 				throw new Error(resp.statusText);
+		// 			}
+		// 			console.log("$json: ", resp.json());
+		// 			return resp.json();
+		// 		})
+		// 		.then(resp => {
+		// 			console.log("$respbody: ", resp.body);
+		// 			console.log("$resp: ", resp.body);
+		// 			setBatch(resp);
+		// 			return true;
+		// 		})
+		// 		.catch(err => {
+		// 			console.error(err);
+		// 			return false;
+		// 		});
+		// }, []);
+
+		axios
+			.get(`${fmp_url}/api/v3/quote/${updatedSymbols}?apikey=${apikey}`)
+			.then(function(response) {
+				console.log("$respbody: ", response.body);
+				console.log("$resp: ", response);
+				setBatch(response.data);
 			})
-			.then(resp => {
-				console.log("$respbody: ", resp.body);
-				console.log("$resp: ", resp.body);
-				setBatch(resp);
-				return true;
+			.catch(function(error) {
+				console.log(error);
 			})
-			.catch(err => {
-				console.error(err);
-				return false;
+			.then(function() {
+				// always executed
 			});
 	}, []);
 	return (
@@ -80,8 +96,8 @@ export const GainerComparison = props => {
 									</tr>
 								</thead>
 								<tbody>
-									{getbatch
-										? getbatch.map((value, index) => {
+									{getBatch
+										? getBatch.map((value, index) => {
 												return (
 													<tr key={index}>
 														<td>{value.symbol}</td>
