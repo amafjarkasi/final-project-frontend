@@ -2,16 +2,19 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink, useParams } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
 import PropTypes from "prop-types";
+import { Context } from "../store/appContext";
 // import "fetch-json";
 
 const fmp_url = "https://financialmodelingprep.com/";
 const fcs_url = "https://fcsapi.com/";
 
 export const Buy = props => {
+	const { store, actions } = useContext(Context);
 	const [analyzedata, setAnalyzeData] = useState([]);
 	const [comparisons, setComparisons] = useState([]);
 	const [stockprice, setStockPrice] = useState("0");
 	const [comparePrice, setComparePrice] = useState("0");
+	const [buyStock, setBuyStock] = useState("0");
 	const apikey = "262c745fe3c5212a43505988b53267ad"; // da6240539dc1685ff601c5c2edb3ff29
 	const symbol = props.match.params.tickerSymbol;
 
@@ -96,15 +99,21 @@ export const Buy = props => {
 																		className="input is-small"
 																		type="text"
 																		placeholder="Amount of shares"
-																		onChange={handlePriceChange}
+																		// value={buy}
+																		onChange={e => setBuyStock(e.target.value)}
+																		// onChange={handlePriceChange}
 																	/>
 																</p>
 																<p className="control is-small">
 																	<a
 																		className="button is-small is-info"
 																		onClick={() => {
-																			this.showModal();
+																			actions.buy(buyStock);
+																			props.history.push("/buy");
 																		}}>
+																		{/* onClick={() => {
+																			this.showModal();
+																		}}> */}
 																		Purchase
 																	</a>
 																</p>
@@ -126,5 +135,6 @@ export const Buy = props => {
 	);
 };
 Buy.propTypes = {
-	match: PropTypes.object
+	match: PropTypes.object,
+	history: PropTypes.object
 };

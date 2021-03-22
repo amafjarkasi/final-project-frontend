@@ -101,7 +101,16 @@ export const MostGainer = () => {
 																		<button
 																			type="button"
 																			className="button is-info is-small fas fa-chart-line">
-																			+
+																			{/* onClick=
+																			{() => {
+																				actions.mostGainer(
+																					buy,
+																					// email,
+																					// password
+																				);
+																				props.history.push("/mostgainer");
+																			}} */}
+																			{/* > + */}
 																		</button>
 																	</Link>
 																</td>
