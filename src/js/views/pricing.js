@@ -23,11 +23,11 @@ export const PricingTable = () => (
 								<li>1 User Max</li>
 								<li>Unlimited Market News</li>
 							</ul>
-							<button className="button is-primary is-fullwidth" type="button">
-								<Link className="has-text-white-bis" to="/signup">
+							<Link className="has-text-white-bis" to="/signup">
+								<button className="button is-primary is-fullwidth" type="button">
 									Sign up
-								</Link>
-							</button>
+								</button>
+							</Link>
 						</div>
 					</div>
 				</div>
@@ -47,11 +47,11 @@ export const PricingTable = () => (
 								<li>2 User Max</li>
 								<li>Unlimited Market News</li>
 							</ul>
-							<button className="button is-danger is-fullwidth" type="button">
-								<Link className="has-text-white-bis" to="/signup">
+							<Link className="has-text-white-bis" to="/signup">
+								<button className="button is-danger is-fullwidth" type="button">
 									Get started
-								</Link>
-							</button>
+								</button>
+							</Link>
 						</div>
 					</div>
 				</div>
@@ -71,11 +71,11 @@ export const PricingTable = () => (
 								<li>3 User Max</li>
 								<li>Unlimited Market News</li>
 							</ul>
-							<button className="button is-primary is-fullwidth" type="button">
-								<Link className="has-text-white-bis" to="/signup">
+							<Link className="has-text-white-bis" to="/signup">
+								<button className="button is-primary is-fullwidth" type="button">
 									Get started
-								</Link>
-							</button>
+								</button>
+							</Link>
 						</div>
 					</div>
 				</div>

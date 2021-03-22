@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
-import InvestLogo from "../../img/InvestLogo.png";
 
 export const Navbar = () => {
 	return (
@@ -18,43 +17,42 @@ export const Navbar = () => {
 				</div>
 				<div className="navbar-menu">
 					<div className="navbar-end">
-						<a className="navbar-item" href="/">
+						<Link to="/" className="navbar-item">
 							Home
-						</a>
-						<a className="navbar-item" href="/features">
+						</Link>
+						<Link to="/features" className="navbar-item">
 							Features
-						</a>
-						<a className="navbar-item" href="/pricing">
+						</Link>
+						<Link to="/pricing" className="navbar-item">
 							Pricing
-						</a>
-
+						</Link>
 						<div className="navbar-item has-dropdown is-hoverable">
 							<a className="navbar-link">Menu</a>
 							<div className="navbar-dropdown">
-								<a className="navbar-item navbar-item-dropdown" href="/dashboard">
+								<Link to="/dashboard" className="navbar-item navbar-item-dropdown">
 									Dashboard
-								</a>
-								<a className="navbar-item navbar-item-dropdown" href="/profile">
+								</Link>
+								<Link to="/profile" className="navbar-item navbar-item-dropdown">
 									Profile
-								</a>
-								<a className="navbar-item navbar-item-dropdown" href="/portfolio">
+								</Link>
+								<Link to="/portfolio" className="navbar-item navbar-item-dropdown">
 									Portfolio
-								</a>
-								<a className="navbar-item navbar-item-dropdown" href="/contact">
+								</Link>
+								<Link to="/contact" className="navbar-item navbar-item-dropdown">
 									Contact Us
-								</a>
+								</Link>
 							</div>
 						</div>
 					</div>
 					<div>
 						<div className="navbar-item">
 							<div className="buttons">
-								<a className="button has-text-dark" href="#">
-									<Link to="/login">Log in</Link>
-								</a>
-								<a className="button is-danger" href="/signup">
-									Sign up
-								</a>
+								<Link to="/login" className="button has-text-dark">
+									Log In
+								</Link>
+								<Link to="/signup" className="button is-danger">
+									Sign Up
+								</Link>
 							</div>
 						</div>
 					</div>
