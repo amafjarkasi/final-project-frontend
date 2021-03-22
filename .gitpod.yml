@@ -8,7 +8,3 @@ tasks:
         cp .env.example .env
       command: >
         npm i vercel -g
-
-vscode:
-  extensions:
-    - dbaeumer.vscode-eslint@2.1.8:02aHhbJ0Q4aGdjHXlTdVKg==
