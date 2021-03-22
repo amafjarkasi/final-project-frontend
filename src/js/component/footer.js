@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 
 export const Footer = () => (
-	<footer className="footer">
-		<div className="container">
+	<footer className="footer has-background-light has-text-black">
+		<div className="container has-background-light has-text-black">
 			<div className="columns is-desktop">
 				<div className="column is-5">
-					<h2 className="title is-5">
-						<a href="#">Investico</a>
+					<h2 className="title is-5 has-text-black">
+						<a href="#" className="has-text-black">
+							Investico
+						</a>
 					</h2>
-					<p className="block">A financial application</p>
+					<p className="block has-text-black">A financial application</p>
 					<div className="buttons">
 						<a className="button" href="#">
 							<img src="https://bootstrapshuffle.com/placeholder/icons/twitter.svg" alt="" />
@@ -22,8 +24,8 @@ export const Footer = () => (
 					</div>
 				</div>
 				<div className="column">
-					<h3 className="title is-6">Products</h3>
-					<ul>
+					<h3 className="title is-6 has-text-black">Products</h3>
+					<ul className="has-text-black">
 						<li>
 							<a href="#">Features</a>
 						</li>
@@ -38,7 +40,7 @@ export const Footer = () => (
 						</li>
 					</ul>
 				</div>
-				<div className="column">
+				<div className="column has-text-black">
 					<h6 className="title is-6">App Links</h6>
 					<ul>
 						<li>
@@ -48,10 +50,10 @@ export const Footer = () => (
 							<a href="/signup">Sign up</a>
 						</li>
 						<li>
-							<a href="/contactus">Contact Us</a>
+							<a href="/pricing">Pricing</a>
 						</li>
 						<li>
-							<a href="#">Blog</a>
+							<a href="/contact">Contact Us</a>
 						</li>
 					</ul>
 				</div>
