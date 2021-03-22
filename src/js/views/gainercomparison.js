@@ -7,17 +7,9 @@ const axios = require("axios");
 export const GainerComparison = props => {
 	const fmp_url = process.env.FMP_API_URL;
 	const apikey = process.env.FMP_API_GLOBAL;
-
 	const [getBatch, setBatch] = useState([]);
-
 	const [getCompanies, setCompanies] = useState("");
-
 	const globalSymbols = props.location.state.comparisons;
-
-	//const symbol = props.location.state.comparisons[0];
-	// console.log(globalSymbols);
-	// console.log(globalSymbols.length);
-	// console.log(getStockData());
 
 	function getStockData(inputSymbols) {
 		let symbolCombine = "";
@@ -32,32 +24,9 @@ export const GainerComparison = props => {
 		return symbolFinal;
 	}
 
-	// https://financialmodelingprep.com/api/v3/quote/AAPL,FB,GOOG?apikey=990e5576342d94ae68643280da08fa5b
-
 	useEffect(() => {
 		console.log("$$", globalSymbols);
 		const updatedSymbols = getStockData(globalSymbols);
-
-		// 	fetch(fmp_url + `/api/v3/quote/${updatedSymbols}?apikey=${apikey}`)
-		// 		.then(resp => {
-		// 			if (!resp.ok) {
-		// 				throw new Error(resp.statusText);
-		// 			}
-		// 			console.log("$json: ", resp.json());
-		// 			return resp.json();
-		// 		})
-		// 		.then(resp => {
-		// 			console.log("$respbody: ", resp.body);
-		// 			console.log("$resp: ", resp.body);
-		// 			setBatch(resp);
-		// 			return true;
-		// 		})
-		// 		.catch(err => {
-		// 			console.error(err);
-		// 			return false;
-		// 		});
-		// }, []);
-
 		axios
 			.get(`${fmp_url}/api/v3/quote/${updatedSymbols}?apikey=${apikey}`)
 			.then(function(response) {
@@ -85,7 +54,7 @@ export const GainerComparison = props => {
 								<thead className="thead-dark">
 									<tr>
 										<th scope="col">Symbol</th>
-										<th scope="col">Name</th>
+										<th scope="col">Company</th>
 										<th scope="col">Price</th>
 										<th scope="col">Change</th>
 										<th scope="col">Day Low</th>
@@ -95,20 +64,24 @@ export const GainerComparison = props => {
 										<th scope="col">Avg 50</th>
 									</tr>
 								</thead>
-								<tbody>
+								<tbody className="table-striped">
 									{getBatch
 										? getBatch.map((value, index) => {
 												return (
 													<tr key={index}>
 														<td>{value.symbol}</td>
-														<td>{value.name}</td>
-														<td>{value.price}</td>
+														<td>
+															{value.name.length > 35
+																? value.name.slice(0, 35) + "..."
+																: value.name}
+														</td>
+														<td>${value.price.toFixed(2)}</td>
 														<td>{value.changesPercentage}%</td>
-														<td>{value.dayLow}</td>
-														<td>{value.dayHigh}</td>
-														<td>{value.yearLow}</td>
-														<td>{value.yearHigh}</td>
-														<td>{value.priceAvg50.toFixed(2)}</td>
+														<td>${value.dayLow.toFixed(2)}</td>
+														<td>${value.dayHigh.toFixed(2)}</td>
+														<td>${value.yearLow.toFixed(2)}</td>
+														<td>${value.yearHigh.toFixed(2)}</td>
+														<td>${value.priceAvg50.toFixed(2)}</td>
 													</tr>
 												);
 										  })
