@@ -172,8 +172,6 @@ export const Analysis = props => {
 									plan and earn incentive compensation in future years.
 								</p>
 								<KeyExecutives name={props.match.params.tickerSymbol} />
-
-								{/* style="border: 1px solid #e0e3eb;" */}
 							</div>
 						</div>
 					</section>
