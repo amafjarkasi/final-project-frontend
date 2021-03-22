@@ -37,7 +37,7 @@ export const GainerComparison = props => {
 		console.log("$$", globalSymbols);
 		const updatedSymbols = getStockData(globalSymbols);
 
-		fetch(fmp_url + `api/v3/quote/${updatedSymbols}?apikey=${apikey}`)
+		fetch(fmp_url + `/api/v3/quote/${updatedSymbols}?apikey=${apikey}`)
 			.then(resp => {
 				if (!resp.ok) {
 					throw new Error(resp.statusText);
