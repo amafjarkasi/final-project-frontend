@@ -7,6 +7,7 @@ import { Login } from "./views/login";
 import { Investments } from "./views/investments";
 import { Forecast } from "./views/forecast";
 import { Signup } from "./views/signup";
+import { ContactUs } from "./views/contactus";
 import { Profile } from "./views/profile";
 import { Navbar } from "./component/navbar";
 import { NavbarLeft } from "./component/navbarleft";
@@ -57,6 +58,7 @@ const Layout = () => {
 						<Route exact path="/gainercomparison" component={GainerComparison} />
 						<Route exact path="/portfolio" component={Portfolio} />
 						<Route exact path="/marketnews" component={MarketNews} />
+						<Route exact path="/contactus" component={ContactUs} />
 						<Route exact path="/stocklookup" component={StockLookup} />
 						<Route exact path="/stockrating" component={StockRating} />
 						<Route exact path="/newslookup" component={NewsLookup} />

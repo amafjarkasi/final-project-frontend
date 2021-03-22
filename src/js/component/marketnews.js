@@ -71,7 +71,7 @@ export const MarketNews = () => {
 									<article className="media is-small mb-0 pb-0" key={index}>
 										<figure className="media-left">
 											<p className="image is-128x128">
-												<img src={news.image} />
+												<img lassName="image is-128x128" src={news.image} />
 											</p>
 										</figure>
 										<div className="media-content">
