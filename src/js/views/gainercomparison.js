@@ -49,44 +49,47 @@ export const GainerComparison = props => {
 				</div>
 				<div className="column is-10-tablet">
 					<section className="section">
+						<h3 className="title is-3 pb-3 is-spaced">Stock Comparisons</h3>
 						<div className="container">
 							<table className="table is-fullwidth">
-								<thead className="thead-dark">
-									<tr>
-										<th scope="col">Symbol</th>
-										<th scope="col">Company</th>
-										<th scope="col">Price</th>
-										<th scope="col">Change</th>
-										<th scope="col">Day Low</th>
-										<th scope="col">Day High</th>
-										<th scope="col">Year Low</th>
-										<th scope="col">Year High</th>
-										<th scope="col">Avg 50</th>
-									</tr>
-								</thead>
-								<tbody className="table-striped">
-									{getBatch
-										? getBatch.map((value, index) => {
-												return (
-													<tr key={index}>
-														<td>{value.symbol}</td>
-														<td>
-															{value.name.length > 35
-																? value.name.slice(0, 35) + "..."
-																: value.name}
-														</td>
-														<td>${value.price.toFixed(2)}</td>
-														<td>{value.changesPercentage}%</td>
-														<td>${value.dayLow.toFixed(2)}</td>
-														<td>${value.dayHigh.toFixed(2)}</td>
-														<td>${value.yearLow.toFixed(2)}</td>
-														<td>${value.yearHigh.toFixed(2)}</td>
-														<td>${value.priceAvg50.toFixed(2)}</td>
-													</tr>
-												);
-										  })
-										: "Loading..."}
-								</tbody>
+								<div className="box">
+									<thead className="thead-dark">
+										<tr>
+											<th scope="col">Symbol</th>
+											<th scope="col">Company</th>
+											<th scope="col">Price</th>
+											<th scope="col">Change</th>
+											<th scope="col">Day Low</th>
+											<th scope="col">Day High</th>
+											<th scope="col">Year Low</th>
+											<th scope="col">Year High</th>
+											<th scope="col">Avg 50</th>
+										</tr>
+									</thead>
+									<tbody className="table-striped">
+										{getBatch
+											? getBatch.map((value, index) => {
+													return (
+														<tr key={index}>
+															<td>{value.symbol}</td>
+															<td>
+																{value.name.length > 35
+																	? value.name.slice(0, 35) + "..."
+																	: value.name}
+															</td>
+															<td>${value.price.toFixed(2)}</td>
+															<td>{value.changesPercentage}%</td>
+															<td>${value.dayLow.toFixed(2)}</td>
+															<td>${value.dayHigh.toFixed(2)}</td>
+															<td>${value.yearLow.toFixed(2)}</td>
+															<td>${value.yearHigh.toFixed(2)}</td>
+															<td>${value.priceAvg50.toFixed(2)}</td>
+														</tr>
+													);
+											  })
+											: "Loading..."}
+									</tbody>
+								</div>
 							</table>
 						</div>
 					</section>
