@@ -51,8 +51,8 @@ export const GainerComparison = props => {
 					<section className="section">
 						<h3 className="title is-3 pb-3 is-spaced">Stock Comparisons</h3>
 						<div className="container">
-							<table className="table is-fullwidth">
-								<div className="box">
+							<div className="box">
+								<table className="table is-fullwidth">
 									<thead className="thead-dark">
 										<tr>
 											<th scope="col">Symbol</th>
@@ -89,8 +89,8 @@ export const GainerComparison = props => {
 											  })
 											: "Loading..."}
 									</tbody>
-								</div>
-							</table>
+								</table>
+							</div>
 						</div>
 					</section>
 				</div>
