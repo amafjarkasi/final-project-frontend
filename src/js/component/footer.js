@@ -24,10 +24,10 @@ export const Footer = () => (
 					</div>
 				</div>
 				<div className="column">
-					<h3 className="title is-6 has-text-black">Products</h3>
+					<h3 className="title is-6 has-text-black">Our Product</h3>
 					<ul className="has-text-black">
 						<li>
-							<a href="#">Features</a>
+							<a href="/features">Features</a>
 						</li>
 						<li>
 							<a href="#">Enterprise</a>

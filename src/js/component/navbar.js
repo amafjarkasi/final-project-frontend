@@ -21,6 +21,9 @@ export const Navbar = () => {
 						<a className="navbar-item" href="/">
 							Home
 						</a>
+						<a className="navbar-item" href="/features">
+							Features
+						</a>
 						<a className="navbar-item" href="/pricing">
 							Pricing
 						</a>

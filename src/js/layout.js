@@ -9,6 +9,7 @@ import { Forecast } from "./views/forecast";
 import { Signup } from "./views/signup";
 import { ContactTeam } from "./views/contact";
 import { PricingTable } from "./views/pricing";
+import { Features } from "./views/features";
 import { Profile } from "./views/profile";
 import { Navbar } from "./component/navbar";
 import { NavbarLeft } from "./component/navbarleft";
@@ -59,6 +60,7 @@ const Layout = () => {
 						<Route exact path="/marketnews" component={MarketNews} />
 						<Route exact path="/contact" component={ContactTeam} />
 						<Route exact path="/pricing" component={PricingTable} />
+						<Route exact path="/features" component={Features} />
 						<Route exact path="/stocklookup" component={StockLookup} />
 						<Route exact path="/stockrating" component={StockRating} />
 						<Route exact path="/newslookup" component={NewsLookup} />
