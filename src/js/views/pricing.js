@@ -25,7 +25,7 @@ export const PricingTable = () => (
 							</ul>
 							<Link className="has-text-white-bis" to="/signup">
 								<button className="button is-primary is-fullwidth" type="button">
-									Sign up
+									Get started
 								</button>
 							</Link>
 						</div>

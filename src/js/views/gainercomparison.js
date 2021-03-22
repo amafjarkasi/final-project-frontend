@@ -2,36 +2,53 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
 import PropTypes from "prop-types";
-const fmp_url = "https://financialmodelingprep.com/";
 
 export const GainerComparison = props => {
+	const fmp_url = process.env.FMP_API_URL;
 	const apikey = process.env.FMP_API_GLOBAL;
-	const [quotedata, setQuoteData] = useState([]);
 
-	const getSymbols = props.location.state.comparisons;
-	const symbol = props.location.state.comparisons[0];
-	var counter = 0;
+	const [getbatch, setBatch] = useState([]);
 
-	props.location.state.comparisons.forEach(index => {
-		symbol[counter] = props.location.state.comparisons[index];
-		console.log(symbol[counter]); // map instead
-		counter++;
-	});
+	const [getCompanies, setCompanies] = useState("");
 
-	function getStockData() {}
+	const globalSymbols = props.location.state.comparisons;
+
+	//const symbol = props.location.state.comparisons[0];
+	// console.log(globalSymbols);
+	// console.log(globalSymbols.length);
+	// console.log(getStockData());
+
+	function getStockData(inputSymbols) {
+		let symbolCombine = "";
+		for (let initial = 0; initial < inputSymbols.length; initial++) {
+			initial !== inputSymbols.length - 1
+				? (symbolCombine += inputSymbols[initial] + ",")
+				: (symbolCombine += inputSymbols[initial]);
+		}
+		const symbolFinal = symbolCombine;
+		console.log("$", symbolFinal);
+		setCompanies(symbolFinal);
+		return symbolFinal;
+	}
+
+	// https://financialmodelingprep.com/api/v3/quote/AAPL,FB,GOOG?apikey=990e5576342d94ae68643280da08fa5b
 
 	useEffect(() => {
-		// map inside for each fetch > symbol
-		fetch(fmp_url + `api/v3/quote/${symbol}?apikey=${apikey}`)
+		console.log("$$", globalSymbols);
+		const updatedSymbols = getStockData(globalSymbols);
+
+		fetch(fmp_url + `api/v3/quote/${updatedSymbols}?apikey=${apikey}`)
 			.then(resp => {
 				if (!resp.ok) {
 					throw new Error(resp.statusText);
 				}
+				console.log("$json: ", resp.json());
 				return resp.json();
 			})
 			.then(resp => {
-				setQuoteData(resp);
-				// { "symbol":
+				console.log("$respbody: ", resp.body);
+				console.log("$resp: ", resp.body);
+				setBatch(resp);
 				return true;
 			})
 			.catch(err => {
@@ -63,8 +80,8 @@ export const GainerComparison = props => {
 									</tr>
 								</thead>
 								<tbody>
-									{quotedata
-										? quotedata.map((value, index) => {
+									{getbatch
+										? getbatch.map((value, index) => {
 												return (
 													<tr key={index}>
 														<td>{value.symbol}</td>
@@ -89,6 +106,7 @@ export const GainerComparison = props => {
 		</>
 	);
 };
+
 GainerComparison.propTypes = {
 	location: PropTypes.object
 };
