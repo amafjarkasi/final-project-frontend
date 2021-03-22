@@ -7,12 +7,16 @@ import { Login } from "./views/login";
 import { Investments } from "./views/investments";
 import { Forecast } from "./views/forecast";
 import { Signup } from "./views/signup";
+import { ContactTeam } from "./views/contact";
+import { PricingTable } from "./views/pricing";
+import { Features } from "./views/features";
 import { Profile } from "./views/profile";
 import { Navbar } from "./component/navbar";
 import { NavbarLeft } from "./component/navbarleft";
 import { Footer } from "./component/footer";
-import { AggIndicator } from "./component/agg_indictator";
+import { AggIndicator } from "./component/aggindicator";
 import { MarketNews } from "./component/marketnews";
+import { KeyExecutives } from "./component/keyexecutives";
 
 import injectContext from "./store/appContext";
 import { Dashboard } from "./views/dashboard";
@@ -21,10 +25,11 @@ import { MostLoser } from "./views/mostloser";
 import { MostActives } from "./views/mostactives";
 import { Analysis } from "./views/analysis";
 import { StockLookup } from "./views/stocklookup";
+import { StockRating } from "./views/stockrating";
+import { NewsLookup } from "./views/newslookup";
 import { Buy } from "./views/buy";
 import { MarketSectors } from "./views/marketsectors";
 import { GainerComparison } from "./views/gainercomparison";
-import { top5Stocks2021 } from "./views/top5stocks2021";
 import { Portfolio } from "./views/portfolio";
 
 //create your first component
@@ -48,19 +53,20 @@ const Layout = () => {
 						<Route exact path="/dashboard" component={Dashboard} />
 						<Route exact path="/mostgainer" component={MostGainer} />
 						<Route exact path="/mostloser" component={MostLoser} />
-						<Route exact path="/top5stocks2021" component={top5Stocks2021} />
 						<Route exact path="/mostactives" component={MostActives} />
 						<Route exact path="/marketsectors" component={MarketSectors} />
 						<Route exact path="/gainercomparison" component={GainerComparison} />
 						<Route exact path="/portfolio" component={Portfolio} />
 						<Route exact path="/marketnews" component={MarketNews} />
+						<Route exact path="/contact" component={ContactTeam} />
+						<Route exact path="/pricing" component={PricingTable} />
+						<Route exact path="/features" component={Features} />
 						<Route exact path="/stocklookup" component={StockLookup} />
-						{/* <Route exact path="/single/:theid" component={Single} /> */}
+						<Route exact path="/stockrating" component={StockRating} />
+						<Route exact path="/newslookup" component={NewsLookup} />
 						<Route path="/analysis/:tickerSymbol" component={Analysis} />
 						<Route path="/buy/:tickerSymbol" component={Buy} />
-						<Route exact path="/agg_indicator">
-							<AggIndicator />
-						</Route>
+						<Route path="/aggindicator" component={AggIndicator} />
 						<Route>
 							<h1>Not found!</h1>
 						</Route>

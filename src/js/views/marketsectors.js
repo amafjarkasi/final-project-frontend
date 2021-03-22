@@ -5,9 +5,10 @@ import { NavbarLeft } from "../component/navbarleft";
 const fmp_url = "https://financialmodelingprep.com/";
 
 export const MarketSectors = () => {
+	const _ = require("lodash");
 	const [data, setData] = useState([]);
 	const [comparisons, setComparisons] = useState([]);
-	const apikey = "262c745fe3c5212a43505988b53267ad";
+	const apikey = process.env.FMP_API_GLOBAL;
 
 	useEffect(() => {
 		fetch(fmp_url + `api/v3/sectors-performance?apikey=${apikey}`, {
@@ -47,7 +48,7 @@ export const MarketSectors = () => {
 										comparisons: comparisons
 									}
 								}}>
-								<button type="button" className="button is-warning">
+								<button type="button" className="button is-medium is-warning">
 									Compare
 								</button>
 							</Link>
@@ -63,7 +64,7 @@ export const MarketSectors = () => {
 												<th scope="col">Analysis</th>
 											</tr>
 										</thead>
-										<tbody>
+										<tbody className="table-striped">
 											{data
 												? data.map((value, index) => {
 														return (
@@ -82,7 +83,7 @@ export const MarketSectors = () => {
 																<td>{value.sector}</td>
 																<td>{value.changesPercentage}</td>
 																<td>
-																	<button className="button is-info is-small fas fa-chart-line" />
+																	<button className="button is-success is-small fas fa-chart-line" />
 																</td>
 															</tr>
 														);

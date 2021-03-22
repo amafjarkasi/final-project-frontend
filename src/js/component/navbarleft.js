@@ -1,18 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
-import InvestLogo from "../../img/InvestLogo.png";
-import axios from "axios";
-
-// const response = async function getMostActive() {
-// 	try {
-// 		const response = await axios.get(
-// 			"https://financialmodelingprep.com/api/v3/quote/AAPL?apikey=da6240539dc1685ff601c5c2edb3ff29"
-// 		);
-// 		console.log(response);
-// 	} catch (error) {
-// 		console.error(error);
-// 	}
-// };
+//import { BrowserRouter as NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, NavLink, useParams } from "react-router-dom";
 
 export const NavbarLeft = () => {
 	return (
@@ -45,6 +33,26 @@ export const NavbarLeft = () => {
 							</NavLink>
 						</li>
 						<li>
+							<NavLink to="/stockrating" activeClassName="is-active">
+								Stock Rating
+							</NavLink>
+						</li>
+						<li>
+							<NavLink to="/newslookup" activeClassName="is-active">
+								Company News
+							</NavLink>
+						</li>
+						<li>
+							<NavLink to="/marketsectors" activeClassName="is-active">
+								Market Sectors
+							</NavLink>
+						</li>
+						<li>
+							<NavLink to="/mostactives" activeClassName="is-active">
+								Most Actives
+							</NavLink>
+						</li>
+						<li>
 							<NavLink to="/mostgainer" activeClassName="is-active">
 								Most Gainer
 							</NavLink>
@@ -54,40 +62,11 @@ export const NavbarLeft = () => {
 								Most Loser
 							</NavLink>
 						</li>
-						{/* <li>
-							<a>Manage Your Team</a>
-							<ul>
-								<li>
-									<a>Members</a>
-								</li>
-								<li>
-									<a>Plugins</a>
-								</li>
-								<li>
-									<a>Add a member</a>
-								</li>
-							</ul>
-						</li> */}
-						<li>
-							<NavLink to="/mostactives" activeClassName="is-active">
-								Most Actives
-							</NavLink>
-						</li>
-						<li>
-							<NavLink to="/marketsectors" activeClassName="is-active">
-								Market Sectors
-							</NavLink>
-						</li>
-						<li>
-							<NavLink to="/top5stocks2021" activeClassName="is-active">
-								Top 5 Stocks 2021
-							</NavLink>
-						</li>
 					</ul>
 					<p className="menu-label">Transactions</p>
 					<ul className="menu-list">
 						<li>
-							<a>Payments</a>
+							<a>History</a>
 						</li>
 						<li>
 							<a>Transfers</a>

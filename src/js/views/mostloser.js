@@ -9,7 +9,7 @@ const fmp_url = "https://financialmodelingprep.com/";
 export const MostLoser = () => {
 	const [data, setData] = useState([]);
 	const [comparisons, setComparisons] = useState([]);
-	const apikey = "262c745fe3c5212a43505988b53267ad";
+	const apikey = process.env.FMP_API_GLOBAL;
 
 	useEffect(() => {
 		fetch(fmp_url + `api/v3/stock/losers?apikey=${apikey}`, {
@@ -25,13 +25,7 @@ export const MostLoser = () => {
 				return resp.json();
 			})
 			.then(resp => {
-				//let store = getStore();
-				// store.user = {
-				// 	token: data.jwt,
-				// 	info: data.user
-				// };
 				setData(resp.mostLoserStock);
-				//setStore(store);
 				return true;
 			})
 			.catch(err => {
@@ -55,7 +49,7 @@ export const MostLoser = () => {
 										comparisons: comparisons
 									}
 								}}>
-								<button type="button" className="button is-warning">
+								<button type="button" className="button is-medium is-warning">
 									Compare
 								</button>
 							</Link>
@@ -75,7 +69,7 @@ export const MostLoser = () => {
 												<th scope="col">Analysis</th>
 											</tr>
 										</thead>
-										<tbody>
+										<tbody className="table-striped">
 											{data
 												? data.map((value, index) => {
 														return (
@@ -95,12 +89,16 @@ export const MostLoser = () => {
 																<td>{value.changes}</td>
 																<td>{value.price}</td>
 																<td>{value.changesPercentage}</td>
-																<td>{value.companyName.slice(0, 25) + "..."}</td>
+																<td>
+																	{value.companyName.length > 30
+																		? value.companyName.slice(0, 30) + "..."
+																		: value.companyName}
+																</td>
 																<td>
 																	<Link to={`/buy/${value.ticker}`}>
 																		<button
 																			type="button"
-																			className="button is-info is-small fas fa-money-bill-wave"
+																			className="button is-primary is-small fas fa-money-bill-wave"
 																		/>
 																	</Link>
 																</td>
@@ -108,7 +106,7 @@ export const MostLoser = () => {
 																	<Link to={`/analysis/${value.ticker}`}>
 																		<button
 																			type="button"
-																			className="button is-info is-small fas fa-chart-line">
+																			className="button is-success is-small fas fa-chart-line">
 																			+
 																		</button>
 																	</Link>

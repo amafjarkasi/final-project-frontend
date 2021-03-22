@@ -14,21 +14,25 @@ export const Buy = props => {
 	const [comparisons, setComparisons] = useState([]);
 	const [stockprice, setStockPrice] = useState("0");
 	const [comparePrice, setComparePrice] = useState("0");
-	const [buyStock, setBuyStock] = useState("0");
-	const apikey = "262c745fe3c5212a43505988b53267ad"; // da6240539dc1685ff601c5c2edb3ff29
+	const apikey = process.env.FMP_API_GLOBAL; // da6240539dc1685ff601c5c2edb3ff29
 	const symbol = props.match.params.tickerSymbol;
 
-	// showModal = () => {
-	// 	this.setState({
-	// 		show: true
-	// 	});
-	// };
-
-	// closeModal = () => {
-	// 	this.setState({
-	// 		show: false
-	// 	});
-	// };
+	function Analysis() {
+		return (
+			<Link to={`/analysis/${symbol}`}>
+				<button
+					className="button is-small is-success mt-1"
+					type="button"
+					data-toggle="tooltip"
+					data-placement="top"
+					title="Buy">
+					<span className="icon">
+						<i className="fas fa-chart-line" />
+					</span>
+				</button>
+			</Link>
+		);
+	}
 
 	useEffect(() => {
 		fetch(fmp_url + `api/v3/profile/${symbol}?apikey=${apikey}`)
@@ -61,7 +65,9 @@ export const Buy = props => {
 				</div>
 				<div className="column is-10-tablet">
 					<section className="section">
-						<h3 className="title is-3 pb-3 is-spaced">Buy for {symbol}</h3>
+						<h3 className="title is-3 pb-3 is-spaced is-spaced is-inline-block">
+							Buy for {symbol} <Analysis />
+						</h3>
 						<div className="container">
 							<table className="table is-fullwidth">
 								<thead className="thead-dark">
@@ -106,7 +112,7 @@ export const Buy = props => {
 																</p>
 																<p className="control is-small">
 																	<a
-																		className="button is-small is-info"
+																		className="button is-small is-primary"
 																		onClick={() => {
 																			actions.buy(buyStock);
 																			props.history.push("/buy");

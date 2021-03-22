@@ -12,6 +12,11 @@ export const Dashboard = () => {
 				</div>
 				<div className="column is-10-tablet">
 					<div className="container is-fluid pr-5">
+						<section className="section pb-0">
+							<div className="container">
+								<MarketNews />
+							</div>
+						</section>
 						<section className="section">
 							<div className="container">
 								<div className="columns is-desktop">

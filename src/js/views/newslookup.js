@@ -4,12 +4,13 @@ import { NavbarLeft } from "../component/navbarleft";
 
 const axios = require("axios");
 
-export const StockLookup = () => {
+export const NewsLookup = () => {
 	const [stockfind, setStockFind] = useState();
 	const [results, setResults] = useState(false);
 	const [hideBuy, sethideBuy] = useState(true);
 	const [stocksymbol, setStockSymbol] = useState("");
-	const finn_token = "c0vsqsv48v6t383lq1kg";
+	const apikey = process.env.FMP_API_GLOBAL;
+	const fmp_url = process.env.FMP_API_URL;
 
 	function BuyStock() {
 		if (!hideBuy) {
@@ -52,44 +53,57 @@ export const StockLookup = () => {
 		}
 	}
 
-	function Lookup() {
+	function LookupNews() {
 		var _ = require("lodash");
-		var obj = stockfind.metric;
-		var rows = [];
-		//console.log(obj);
 
-		if (!_.isEmpty(obj)) {
-			for (const prop in obj) {
-				let prop_convert = _.startCase(`${prop}`);
-				rows.push(`${prop_convert}: ${obj[prop]}`);
-			}
-			return (
-				<div className="box">
-					<div className="list">
-						<h4 className="title is-4 pb-3 is-spaced has-text-danger has-text-centered">
-							Basic Financials
-						</h4>
-						<br />
-						<ul>
-							{rows.map((stockoutput, index) => (
-								<div className="list-item" key={index}>
-									<li>{stockoutput}</li>
-								</div>
-							))}
-						</ul>
+		return (
+			<>
+				<div className="box is-borderless">
+					<div className="rows">
+						{stockfind.map((news, index) => {
+							return (
+								<>
+									<div className="row mb-0 pb-0">
+										<article className="media is-small mb-0 pb-0" key={index}>
+											<figure className="media-left">
+												<p className="image is-128x128">
+													<img src={news.image} />
+												</p>
+											</figure>
+											<div className="media-content">
+												<div className="content">
+													<p>
+														<a href={news.url} rel="noreferrer" target="_blank">
+															<strong>{news.title}</strong>
+														</a>
+														<br />
+
+														{news.text.length > 220
+															? news.text.slice(0, 220) + "..."
+															: news.text}
+													</p>
+												</div>
+											</div>
+										</article>
+									</div>
+								</>
+							);
+						})}
 					</div>
 				</div>
-			);
-		} else {
-			sethideBuy(true);
-			return (
-				<div className="box">
-					<div className="list">
-						<h5 className="title is-5 pb-3 is-spaced has-text-danger">No Results</h5>
-					</div>
-				</div>
-			);
-		}
+			</>
+
+			//     )} else {
+			// 	sethideBuy(true);
+			// 	return (
+			// 		<div className="box">
+			// 			<div className="list">
+			// 				<h5 className="title is-5 pb-3 is-spaced has-text-danger">No Results</h5>
+			// 			</div>
+			// 		</div>
+			// 	);
+			// }
+		);
 	}
 
 	function clearStockLookup() {
@@ -97,15 +111,20 @@ export const StockLookup = () => {
 		sethideBuy(true);
 		setResults(false);
 	}
-
+	// https://financialmodelingprep.com/api/v3/stock_news?tickers=AAPL&limit=50&apikey=990e5576342d94ae68643280da08fa5b
 	function handleStockLookup(e) {
 		if (stocksymbol != "") {
 			axios
-				.get(`https://finnhub.io/api/v1/stock/metric?symbol=${stocksymbol}&metric=all&token=${finn_token}`)
+				.get(`${fmp_url}/api/v3/stock_news?tickers=${stocksymbol}&limit=10&apikey=${apikey}`)
 				.then(function(response) {
-					setStockFind(response.data);
-					setResults(true);
-					sethideBuy(false);
+					if (response.data.length) {
+						setStockFind(response.data);
+						setResults(true);
+						sethideBuy(false);
+					} else {
+						setResults(false);
+						sethideBuy(true);
+					}
 				})
 				.catch(function(error) {
 					console.log(error);
@@ -127,7 +146,7 @@ export const StockLookup = () => {
 				<div className="column is-10-tablet">
 					<div className="container is-fluid pr-7">
 						<section className="section">
-							<h3 className="title is-3 pb-3 is-spaced">Quick Stock Lookup</h3>
+							<h3 className="title is-3 pb-3 is-spaced">Company News Lookup</h3>
 							<div className="container pt-3 pr-7">
 								<div className="columns is-desktop">
 									<table className="table is-fullwidth">
@@ -171,7 +190,7 @@ export const StockLookup = () => {
 												{results ? <BuyStock /> : ""}
 											</div>
 										</div>
-										{!results ? "" : <Lookup />}
+										{!results ? "" : <LookupNews />}
 									</table>
 								</div>
 							</div>

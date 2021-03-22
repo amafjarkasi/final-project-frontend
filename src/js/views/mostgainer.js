@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, NavLink, useParams } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
 
 const fmp_url = "https://financialmodelingprep.com/";
@@ -7,7 +7,7 @@ const fmp_url = "https://financialmodelingprep.com/";
 export const MostGainer = () => {
 	const [data, setData] = useState([]);
 	const [comparisons, setComparisons] = useState([]);
-	const apikey = "262c745fe3c5212a43505988b53267ad";
+	const apikey = process.env.FMP_API_GLOBAL;
 
 	useEffect(() => {
 		fetch(fmp_url + `api/v3/stock/gainers?apikey=${apikey}`, {
@@ -47,7 +47,7 @@ export const MostGainer = () => {
 										comparisons: comparisons
 									}
 								}}>
-								<button type="button" className="button is-warning">
+								<button type="button" className="button is-medium is-warning">
 									Compare
 								</button>
 							</Link>
@@ -67,7 +67,7 @@ export const MostGainer = () => {
 												<th scope="col">Analysis</th>
 											</tr>
 										</thead>
-										<tbody>
+										<tbody className="table-striped">
 											{data
 												? data.map((value, index) => {
 														return (
@@ -87,12 +87,16 @@ export const MostGainer = () => {
 																<td>{value.changes}</td>
 																<td>{value.price}</td>
 																<td>{value.changesPercentage}</td>
-																<td>{value.companyName.slice(0, 25) + "..."}</td>
+																<td>
+																	{value.companyName.length > 30
+																		? value.companyName.slice(0, 30) + "..."
+																		: value.companyName}
+																</td>
 																<td>
 																	<Link to={`/buy/${value.ticker}`}>
 																		<button
 																			type="button"
-																			className="button is-info is-small fas fa-money-bill-wave"
+																			className="button is-primary is-small fas fa-money-bill-wave"
 																		/>
 																	</Link>
 																</td>
@@ -100,18 +104,7 @@ export const MostGainer = () => {
 																	<Link to={`/analysis/${value.ticker}`}>
 																		<button
 																			type="button"
-																			className="button is-info is-small fas fa-chart-line">
-																			{/* onClick=
-																			{() => {
-																				actions.mostGainer(
-																					buy,
-																					// email,
-																					// password
-																				);
-																				props.history.push("/mostgainer");
-																			}} */}
-																			{/* > + */}
-																		</button>
+																			className="button is-success is-small fas fa-chart-line"></button>
 																	</Link>
 																</td>
 															</tr>

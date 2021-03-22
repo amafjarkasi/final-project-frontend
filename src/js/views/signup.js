@@ -22,39 +22,34 @@ export const Signup = props => {
 										<input
 											className="input"
 											type="text"
-											placeholder="Name"
+											placeholder="Full Name"
 											value={full_name}
 											onChange={e => setFullName(e.target.value)}
 										/>
 									</div>
-									<div className="field">
-										<div className="control">
-											<input
-												className="input"
-												type="text"
-												placeholder="Email"
-												value={email}
-												onChange={e => setEmail(e.target.value)}
-											/>
-										</div>
-									</div>
-									<div className="field">
-										<div className="control">
-											<input
-												className="input"
-												type="password"
-												placeholder="Password"
-												value={password}
-												onChange={e => setPassword(e.target.value)}
-											/>
-										</div>
+								</div>
+								<div className="field">
+									<div className="control">
+										<input
+											className="input"
+											type="text"
+											placeholder="Email"
+											value={email}
+											onChange={e => setEmail(e.target.value)}
+										/>
 									</div>
 								</div>
-								{/* {/* <div className="field">
+								<div className="field">
 									<div className="control">
-										<input className="input" type="password" placeholder="Password" />
-									</div> 
-								</div> */}
+										<input
+											className="input"
+											type="password"
+											placeholder="Password"
+											value={password}
+											onChange={e => setPassword(e.target.value)}
+										/>
+									</div>
+								</div>
 								<div className="field">
 									<div className="control">
 										<button

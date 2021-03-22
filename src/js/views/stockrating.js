@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
+import { CircularProgressbar } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+import { Badge, Pane, Paragraph } from "evergreen-ui";
 
-const axios = require("axios");
+const fmp = require("financialmodelingprep")(process.env.FMP_API_GLOBAL);
 
-export const StockLookup = () => {
-	const [stockfind, setStockFind] = useState();
+export const StockRating = () => {
+	const [stockfind, setStockFind] = useState([]);
+	const [ratingSymbol, setRatingSymbol] = useState([]);
 	const [results, setResults] = useState(false);
 	const [hideBuy, sethideBuy] = useState(true);
 	const [stocksymbol, setStockSymbol] = useState("");
-	const finn_token = "c0vsqsv48v6t383lq1kg";
 
 	function BuyStock() {
 		if (!hideBuy) {
@@ -52,43 +55,59 @@ export const StockLookup = () => {
 		}
 	}
 
-	function Lookup() {
-		var _ = require("lodash");
-		var obj = stockfind.metric;
-		var rows = [];
-		//console.log(obj);
-
-		if (!_.isEmpty(obj)) {
-			for (const prop in obj) {
-				let prop_convert = _.startCase(`${prop}`);
-				rows.push(`${prop_convert}: ${obj[prop]}`);
-			}
+	function LookupNews() {
+		const value = stockfind.score;
+		if (value !== null) {
+			console.log(value);
 			return (
-				<div className="box">
-					<div className="list">
-						<h4 className="title is-4 pb-3 is-spaced has-text-danger has-text-centered">
-							Basic Financials
-						</h4>
-						<br />
-						<ul>
-							{rows.map((stockoutput, index) => (
-								<div className="list-item" key={index}>
-									<li>{stockoutput}</li>
+				<>
+					<div className="box is-borderless">
+						<div className="rows">
+							<div className="row pb-1 pt-0">
+								<h4 className="title is-4 pb-3 is-spaced has-text-primary has-text-centered">
+									{ratingSymbol} - Consensus Rating
+								</h4>
+								<Paragraph size={400} marginTop="default" className="pb-2">
+									To reach an opinion and communicate the value and volatility of a covered security,
+									analysts research public financial statements, listen in on conference calls and
+									talk to managers and the customers of a company, typically in an attempt to come up
+									with findings for a research report. Analysts research public financial statements,
+									listen in on conference calls and talk to managers and the customers of a company.
+									Ultimately, through all this investigation into the companys performance, the
+									analyst decides whether the stock is a buy, sell, or hold.
+								</Paragraph>
+								<p>
+									<Pane
+										display="flex"
+										className="has-text-centered are-medium is-justify-content-center">
+										<Pane flexBasis={300} className="are-medium">
+											<Badge color="red" isSolid marginRight={8}>
+												Recommendation: {stockfind.recommendation}
+											</Badge>
+											<Badge color="blue" isSolid>
+												Rating: {stockfind.rating}
+											</Badge>
+										</Pane>
+									</Pane>
+								</p>
+							</div>
+							<div className="row mb-0 pt-4">
+								<div className="center-graph" style={{ width: 100, height: 100 }}>
+									<CircularProgressbar
+										className="center-graph"
+										value={value}
+										maxValue={5}
+										text={`${value}`}
+									/>
 								</div>
-							))}
-						</ul>
+							</div>
+						</div>
 					</div>
-				</div>
+				</>
 			);
 		} else {
 			sethideBuy(true);
-			return (
-				<div className="box">
-					<div className="list">
-						<h5 className="title is-5 pb-3 is-spaced has-text-danger">No Results</h5>
-					</div>
-				</div>
-			);
+			setResults(false);
 		}
 	}
 
@@ -100,18 +119,14 @@ export const StockLookup = () => {
 
 	function handleStockLookup(e) {
 		if (stocksymbol != "") {
-			axios
-				.get(`https://finnhub.io/api/v1/stock/metric?symbol=${stocksymbol}&metric=all&token=${finn_token}`)
-				.then(function(response) {
-					setStockFind(response.data);
+			fmp.stock(`${stocksymbol}`)
+				.rating()
+				.then(response => {
+					var data_update = response;
+					setStockFind(data_update.rating);
+					setRatingSymbol(data_update.symbol);
 					setResults(true);
 					sethideBuy(false);
-				})
-				.catch(function(error) {
-					console.log(error);
-				})
-				.then(function() {
-					// always executed
 				});
 		} else {
 			sethideBuy(true);
@@ -127,7 +142,7 @@ export const StockLookup = () => {
 				<div className="column is-10-tablet">
 					<div className="container is-fluid pr-7">
 						<section className="section">
-							<h3 className="title is-3 pb-3 is-spaced">Quick Stock Lookup</h3>
+							<h3 className="title is-3 pb-3 is-spaced">Analyst Rating Consensus</h3>
 							<div className="container pt-3 pr-7">
 								<div className="columns is-desktop">
 									<table className="table is-fullwidth">
@@ -171,7 +186,7 @@ export const StockLookup = () => {
 												{results ? <BuyStock /> : ""}
 											</div>
 										</div>
-										{!results ? "" : <Lookup />}
+										{!results ? "" : <LookupNews />}
 									</table>
 								</div>
 							</div>

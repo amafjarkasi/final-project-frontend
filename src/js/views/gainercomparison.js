@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 const fmp_url = "https://financialmodelingprep.com/";
 
 export const GainerComparison = props => {
-	const apikey = "262c745fe3c5212a43505988b53267ad";
+	const apikey = process.env.FMP_API_GLOBAL;
 	const [quotedata, setQuoteData] = useState([]);
 
 	const getSymbols = props.location.state.comparisons;
