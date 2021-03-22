@@ -1,49 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
-import {
-	EmailShareButton,
-	FacebookShareButton,
-	HatenaShareButton,
-	InstapaperShareButton,
-	LineShareButton,
-	LinkedinShareButton,
-	LivejournalShareButton,
-	MailruShareButton,
-	OKShareButton,
-	PinterestShareButton,
-	PocketShareButton,
-	RedditShareButton,
-	TelegramShareButton,
-	TumblrShareButton,
-	TwitterShareButton,
-	ViberShareButton,
-	VKShareButton,
-	WhatsappShareButton,
-	WorkplaceShareButton
-} from "react-share";
-import {
-	EmailIcon,
-	FacebookIcon,
-	FacebookMessengerIcon,
-	HatenaIcon,
-	InstapaperIcon,
-	LineIcon,
-	LinkedinIcon,
-	LivejournalIcon,
-	MailruIcon,
-	OKIcon,
-	PinterestIcon,
-	PocketIcon,
-	RedditIcon,
-	TelegramIcon,
-	TumblrIcon,
-	TwitterIcon,
-	ViberIcon,
-	VKIcon,
-	WeiboIcon,
-	WhatsappIcon,
-	WorkplaceIcon
-} from "react-share";
+import { EmailShareButton, FacebookShareButton, TwitterShareButton, WhatsappShareButton } from "react-share";
+import { EmailIcon, FacebookIcon, TwitterIcon, WhatsappIcon } from "react-share";
 
 const finnhub = require("finnhub");
 
