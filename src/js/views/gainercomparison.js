@@ -19,19 +19,15 @@ export const GainerComparison = props => {
 				: (symbolCombine += inputSymbols[initial]);
 		}
 		const symbolFinal = symbolCombine;
-		console.log("$", symbolFinal);
 		setCompanies(symbolFinal);
 		return symbolFinal;
 	}
 
 	useEffect(() => {
-		console.log("$$", globalSymbols);
 		const updatedSymbols = getStockData(globalSymbols);
 		axios
 			.get(`${fmp_url}/api/v3/quote/${updatedSymbols}?apikey=${apikey}`)
 			.then(function(response) {
-				console.log("$respbody: ", response.body);
-				console.log("$resp: ", response);
 				setBatch(response.data);
 			})
 			.catch(function(error) {
@@ -64,6 +60,8 @@ export const GainerComparison = props => {
 											<th scope="col">Year Low</th>
 											<th scope="col">Year High</th>
 											<th scope="col">Avg 50</th>
+											<th scope="col">Buy</th>
+											<th scope="col">Analysis</th>
 										</tr>
 									</thead>
 									<tbody className="table-striped">
@@ -84,6 +82,22 @@ export const GainerComparison = props => {
 															<td>${value.yearLow.toFixed(2)}</td>
 															<td>${value.yearHigh.toFixed(2)}</td>
 															<td>${value.priceAvg50.toFixed(2)}</td>
+															<td>
+																<Link to={`/buy/${value.symbol}`}>
+																	<button
+																		type="button"
+																		className="button is-primary is-small fas fa-money-bill-wave"
+																	/>
+																</Link>
+															</td>
+															<td>
+																<Link to={`/analysis/${value.symbol}`}>
+																	<button
+																		type="button"
+																		className="button is-success is-small fas fa-chart-line"
+																	/>
+																</Link>
+															</td>
 														</tr>
 													);
 											  })
