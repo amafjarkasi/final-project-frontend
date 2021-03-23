@@ -106,8 +106,8 @@ export const Buy = props => {
 																		type="text"
 																		placeholder="Amount of shares"
 																		// value={buy}
-																		onChange={e => setBuyStock(e.target.value)}
-																		// onChange={handlePriceChange}
+																		//onChange={e => setBuyStock(e.target.value)}
+																		onChange={handlePriceChange}
 																	/>
 																</p>
 																<p className="control is-small">
