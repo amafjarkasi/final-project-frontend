@@ -2,8 +2,11 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
 import Charlie from "../../img/charlie.jpg";
-// import Toggle from "react-toggle";
-// import { GiReceiveMoney } from "react-icons/go";
+import { AvatarGenerator } from "random-avatar-generator";
+
+const generator = new AvatarGenerator();
+
+generator.generateRandomAvatar();
 
 export const Profile = () => {
 	return (
@@ -20,7 +23,11 @@ export const Profile = () => {
 									<div className="flex-shrink-0">
 										<div className="profile-image">
 											<a href="#" className="image is-64x64 m-auto">
-												<img alt="profil" src={Charlie} className="is-rounded" />
+												<img
+													alt="profil"
+													src={generator.generateRandomAvatar()}
+													className="is-rounded"
+												/>
 											</a>
 										</div>
 									</div>
