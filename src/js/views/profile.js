@@ -21,7 +21,7 @@ export const Profile = () => {
 							<div className="box has-text-centered has-background-white">
 								<div>
 									<div className="flex-shrink-0">
-										<div className="profile-image">
+										<div className="profile-image pb-1">
 											<a href="#" className="image is-64x64 m-auto">
 												<img
 													alt="profil"
