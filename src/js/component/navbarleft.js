@@ -1,5 +1,4 @@
 import React from "react";
-//import { BrowserRouter as NavLink } from "react-router-dom";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink, useParams } from "react-router-dom";
 
 export const NavbarLeft = () => {
