@@ -19,13 +19,14 @@ export const MarketNews = () => {
 	const result = getNews.filter(article => article.category == "business");
 	return (
 		<>
+			{/* <div className="box"> */}
 			<div className="rows">
 				<h2 className="title">Market News</h2>
 				{result.map((news, index) => {
 					if (index < 5) {
 						return (
 							<>
-								<div className="row mb-0 pb-0">
+								<div className="row mb-0 pb-2">
 									<article className="media is-small mb-0 pb-0" key={index}>
 										<figure className="media-left">
 											<p className="image is-128x128">
@@ -39,7 +40,9 @@ export const MarketNews = () => {
 														<strong>{news.headline}</strong>
 													</a>
 													<br />
-													{news.summary}
+													{news.summary.length > 145
+														? news.summary.slice(0, 145) + "..."
+														: news.summary}
 													<br />
 													<div className="pt-3">
 														<EmailShareButton className="pr-2" url={news.url}>
@@ -65,6 +68,7 @@ export const MarketNews = () => {
 					}
 				})}
 			</div>
+			{/* </div> */}
 		</>
 	);
 };

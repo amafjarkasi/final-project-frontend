@@ -21,7 +21,7 @@ export const Dashboard = () => {
 							<div className="container">
 								<div className="columns is-desktop">
 									<div className="column is-4-desktop">
-										<h2 className="title">Welcome Piper</h2>
+										<h2 className="title">Welcome Joe</h2>
 										<p className="block">You have 2 messages and 3 notifications.</p>
 										<table className="table">
 											<tbody>
@@ -76,7 +76,7 @@ export const Dashboard = () => {
 										</div>
 									</div>
 									<div className="column is-3-desktop">
-										<h3 className="title is-4">PiperNet progress</h3>
+										<h3 className="title is-4">Portfolio Progress</h3>
 										<p className="block">{`You're asigned to two projects`}</p>
 										<div className="columns has-text-centered">
 											<div className="column">
