@@ -17,7 +17,7 @@ export const Dashboard = () => {
 								<MarketNews />
 							</div>
 						</section>
-						<section className="section">
+						{/* <section className="section">
 							<div className="container">
 								<div className="columns is-desktop">
 									<div className="column is-4-desktop">
@@ -86,7 +86,7 @@ export const Dashboard = () => {
 															<figure className="image is-96x96">
 																<img
 																	className="is-rounded"
-																	src="https://bootstrapshuffle.com/placeholder/pictures/bg_circle.svg"
+																	// src="https://bootstrapshuffle.com/placeholder/pictures/bg_circle.svg"
 																	alt=""
 																/>
 															</figure>
@@ -125,7 +125,7 @@ export const Dashboard = () => {
 									</div>
 								</div>
 							</div>
-						</section>
+						</section> */}
 					</div>
 				</div>
 			</div>

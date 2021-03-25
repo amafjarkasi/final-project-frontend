@@ -54,7 +54,7 @@ export const Signup = props => {
 									<div className="control">
 										<button
 											type="button"
-											className="button is-danger is-fullwidth"
+											className="button is-success is-fullwidth"
 											onClick={() => {
 												actions.signupPage(full_name, email, password);
 												props.history.push("/login");

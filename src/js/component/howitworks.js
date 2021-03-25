@@ -12,7 +12,7 @@ export const Howitworks = () => (
 						works.`}
 					</p>
 					<div className="buttons">
-						<a className="button is-danger" href="#">
+						<a className="button is-success" href="#">
 							Start Setup!
 						</a>
 						<a className="button is-text" href="#">
@@ -23,7 +23,7 @@ export const Howitworks = () => (
 				<div className="column is-6">
 					<div className="media">
 						<div className="media-left">
-							<div className="number has-background-danger has-text-white">1</div>
+							<div className="number has-background-success has-text-white">1</div>
 						</div>
 						<div className="media-content">
 							<div className="content">
@@ -37,7 +37,7 @@ export const Howitworks = () => (
 					</div>
 					<div className="media">
 						<div className="media-left">
-							<div className="number has-background-danger has-text-white">2</div>
+							<div className="number has-background-success has-text-white">2</div>
 						</div>
 						<div className="media-content">
 							<div className="content">
@@ -51,7 +51,7 @@ export const Howitworks = () => (
 					</div>
 					<div className="media">
 						<div className="media-left">
-							<div className="number has-background-danger has-text-white">3</div>
+							<div className="number has-background-success has-text-white">3</div>
 						</div>
 						<div className="media-content">
 							<div className="content">

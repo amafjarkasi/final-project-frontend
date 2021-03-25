@@ -9,8 +9,7 @@ export const Header = () => {
 						{/* <h1 className="title is-spaced">Bringing the Internet of the Future to the People</h1> */}
 						<h2 className="subtitle">
 							{`
-                    Decentralized, secure, private. The PiperNet is on it's way to revolutionize every smartphone, PC,
-                    and smart-fridge near you.
+               
                     `}
 						</h2>
 					</div>

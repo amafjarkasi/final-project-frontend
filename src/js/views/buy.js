@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink, useParams } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
 import PropTypes from "prop-types";
@@ -14,6 +14,7 @@ export const Buy = props => {
 	const [comparisons, setComparisons] = useState([]);
 	const [stockprice, setStockPrice] = useState("0");
 	const [comparePrice, setComparePrice] = useState("0");
+	const [buyStock, setBuyStock] = useState("0");
 	const apikey = process.env.FMP_API_GLOBAL; // da6240539dc1685ff601c5c2edb3ff29
 	const symbol = props.match.params.tickerSymbol;
 
@@ -112,14 +113,9 @@ export const Buy = props => {
 																</p>
 																<p className="control is-small">
 																	<a
+																		type="button"
 																		className="button is-small is-primary"
-																		onClick={() => {
-																			actions.buy(buyStock);
-																			props.history.push("/buy");
-																		}}>
-																		{/* onClick={() => {
-																			this.showModal();
-																		}}> */}
+																		onClick={() => actions.buy(buyStock)}>
 																		Purchase
 																	</a>
 																</p>

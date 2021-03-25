@@ -8,6 +8,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			camilla_url: "",
 			base_url: "https://3000-green-seahorse-8vq8lccz.ws-us03.gitpod.io",
 			fmp_url: "https://financialmodelingprep.com/",
+			token: null,
 
 			user: {
 				loggedIn: false,
@@ -116,16 +117,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.then(data => {
 						let store = getStore();
-						store.user = {
-							loggedIn: true,
-							email: email,
-							token: data.jwt,
-							info: data.user
-						};
-						setStore(store);
-						sessionStorage.setItem("currentUser", JSON.stringify(data));
-						sessionStorage.setItem("loggedIn", true);
-						return true;
+						// store.user = {
+						// 	loggedIn: true,
+						// 	email: email,
+						// 	token: data.jwt,
+						// 	info: data.user
+						// };
+						// setStore(store);
+						// sessionStorage.setItem("currentUser", JSON.stringify(data));
+						// sessionStorage.setItem("loggedIn", true);
+						setStore({
+							token: data
+						});
 					})
 					.catch(err => {
 						console.error(err);
@@ -185,18 +188,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 						return false;
 					});
 			},
-			buy_stock: (question_1, question_2, question_3, question_4, question_5) => {
-				return fetch(getStore().base_url + "/portfolio", {
+			buy: (price, quantity, symbol, total_purchase) => {
+				return fetch(getStore().base_url + "/buy", {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json"
 					},
 					body: JSON.stringify({
-						question_1: question_1,
-						question_2: question_2,
-						question_3: question_3,
-						question_4: question_4,
-						question_5: question_5
+						price: price,
+						quantity: quantity,
+						symbol: symbol,
+						total_purchase: total_purchase
 					})
 				})
 					.then(resp => {

@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-rou
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar is-info pt-3 pb-3">
+		<nav className="navbar pt-1 pb-1">
+			{/* is-info */}
 			<div className="container">
 				<div className="navbar-brand is-active">
 					<a className="navbar-item" href="/">
@@ -47,10 +48,10 @@ export const Navbar = () => {
 					<div>
 						<div className="navbar-item">
 							<div className="buttons">
-								<Link to="/login" className="button has-text-dark">
+								<Link to="/login" className="button has-text-dark pr-5 pl-5">
 									Log In
 								</Link>
-								<Link to="/signup" className="button is-danger">
+								<Link to="/signup" className="button is-success pr-5 pl-5">
 									Sign Up
 								</Link>
 							</div>
