@@ -41,7 +41,7 @@ export const Login = () => {
 								<div className="field">
 									<button
 										type="button"
-										className="button is-danger is-fullwidth"
+										className="button is-success is-fullwidth"
 										onClick={() => actions.login(email, password)}>
 										Sign in!
 									</button>

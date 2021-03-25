@@ -4,10 +4,10 @@ import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-rou
 export const ContactTeam = () => (
 	<section className="section">
 		<div className="container py-4">
-			<h2 className="title has-text-centered mb-6">Contact our team</h2>
+			<h2 className="title has-text-centered mb-6">Contact Our Team</h2>
 			<div className="columns">
 				<div className="column is-6">
-					<h4 className="title is-spaced is-4">Reach out about any questions you may have</h4>
+					<h4 className="title is-spaced is-4">Reach Out To Us With Any Questions You May Have</h4>
 					<p className="subtitle">
 						We&apos;re here to answer your questions and discuss how our application can help your financial
 						investments.
@@ -77,7 +77,7 @@ export const ContactTeam = () => (
 						</div>
 						<div className="field">
 							<div className="control">
-								<button className="button is-primary is-fullwidth" type="submit">
+								<button className="button is-success is-fullwidth" type="submit">
 									Submit
 								</button>
 							</div>

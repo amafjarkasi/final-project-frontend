@@ -83,7 +83,7 @@ export const Portfolio = () => {
 											<div className="field">
 												<button
 													type="button"
-													className="button is-danger is-fullwidth"
+													className="button is-success is-fullwidth"
 													onClick={() =>
 														actions.portfolio(
 															question_1,

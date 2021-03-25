@@ -24,7 +24,7 @@ export const PricingTable = () => (
 								<li>Unlimited Market News</li>
 							</ul>
 							<Link className="has-text-white-bis" to="/signup">
-								<button className="button is-primary is-fullwidth" type="button">
+								<button className="button is-success is-fullwidth" type="button">
 									Sign up
 								</button>
 							</Link>
@@ -48,7 +48,7 @@ export const PricingTable = () => (
 								<li>Unlimited Market News</li>
 							</ul>
 							<Link className="has-text-white-bis" to="/signup">
-								<button className="button is-danger is-fullwidth" type="button">
+								<button className="button is-primary is-fullwidth" type="button">
 									Get started
 								</button>
 							</Link>
@@ -72,7 +72,7 @@ export const PricingTable = () => (
 								<li>Unlimited Market News</li>
 							</ul>
 							<Link className="has-text-white-bis" to="/signup">
-								<button className="button is-primary is-fullwidth" type="button">
+								<button className="button is-success is-fullwidth" type="button">
 									Get started
 								</button>
 							</Link>

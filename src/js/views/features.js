@@ -9,7 +9,7 @@ export const Features = () => (
 				<div className="columns pt-4 mb-6">
 					<div className="column is-4">
 						<div className="block">
-							<span className="number has-background-info" style={{ marginRight: 0 }}>
+							<span className="number has-background-success" style={{ marginRight: 0 }}>
 								1
 							</span>
 						</div>
@@ -18,7 +18,7 @@ export const Features = () => (
 					</div>
 					<div className="column is-4">
 						<div className="block">
-							<span className="number has-background-info" style={{ marginRight: 0 }}>
+							<span className="number has-background-success" style={{ marginRight: 0 }}>
 								2
 							</span>
 						</div>
@@ -27,7 +27,7 @@ export const Features = () => (
 					</div>
 					<div className="column is-4">
 						<div className="block">
-							<span className="number has-background-info" style={{ marginRight: 0 }}>
+							<span className="number has-background-success" style={{ marginRight: 0 }}>
 								3
 							</span>
 						</div>
