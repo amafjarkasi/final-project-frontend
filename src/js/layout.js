@@ -30,6 +30,7 @@ import { NewsLookup } from "./views/newslookup";
 import { Buy } from "./views/buy";
 import { MarketSectors } from "./views/marketsectors";
 import { GainerComparison } from "./views/gainercomparison";
+import { SectorComparison } from "./views/sectorcomparison";
 import { Portfolio } from "./views/portfolio";
 
 //create your first component
@@ -56,6 +57,7 @@ const Layout = () => {
 						<Route exact path="/mostactives" component={MostActives} />
 						<Route exact path="/marketsectors" component={MarketSectors} />
 						<Route exact path="/gainercomparison" component={GainerComparison} />
+						<Route exact path="/sectorcomparison" component={SectorComparison} />
 						<Route exact path="/portfolio" component={Portfolio} />
 						<Route exact path="/marketnews" component={MarketNews} />
 						<Route exact path="/contact" component={ContactTeam} />

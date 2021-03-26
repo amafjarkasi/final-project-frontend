@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const finnhub = require("finnhub");
 const api_key = finnhub.ApiClient.instance.authentications["api_key"];
-api_key.apiKey = "c0vsqsv48v6t383lq1kg";
+api_key.apiKey = process.env.FINNHUB_API_GLOBAL;
 const finnhubClient = new finnhub.DefaultApi();
 
 export const AggIndicator = props => {
@@ -15,10 +15,8 @@ export const AggIndicator = props => {
 		var adxcalculate = parseInt(adx);
 
 		if (adxcalculate <= "25") {
-			//return "<i className=fas fa-exclamation-triangle>Weak Trend</i>";
 			return "Weak ADX Trend";
 		} else if (adxcalculate > "25" && adxcalculate <= "50") {
-			//return "<i className=fas fa-check-square>Strong Trend</i>";
 			return "Strong ADX Trend";
 		} else if (adxcalculate > "50" && adxcalculate <= "75") {
 			return "Very Strong ADX Trend";

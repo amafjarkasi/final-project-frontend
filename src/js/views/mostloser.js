@@ -42,6 +42,7 @@ export const MostLoser = () => {
 				<div className="column is-10-tablet">
 					<div className="container is-fluid pr-7">
 						<section className="section">
+							<h3 className="title is-3 pb-3 is-spaced">Most Loser Stocks</h3>
 							<Link
 								to={{
 									pathname: "/gainercomparison",

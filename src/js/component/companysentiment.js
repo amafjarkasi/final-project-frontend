@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-// import renderEmpty from "antd/lib/config-provider/renderEmpty";
 
 const finnhub = require("finnhub");
 const api_key = finnhub.ApiClient.instance.authentications["api_key"];
-api_key.apiKey = "c0vsqsv48v6t383lq1kg";
+api_key.apiKey = process.env.FINNHUB_API_GLOBAL;
 const finnhubClient = new finnhub.DefaultApi();
 
 export const CompanySentiment = props => {

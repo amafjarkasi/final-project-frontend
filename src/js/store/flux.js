@@ -8,7 +8,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			camilla_url: "",
 			base_url: "https://3000-green-seahorse-8vq8lccz.ws-us03.gitpod.io",
 			fmp_url: "https://financialmodelingprep.com/",
-			token: null,
+			fmp_api: process.env.FMP_API_GLOBAL,
 
 			user: {
 				loggedIn: false,
@@ -40,7 +40,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				*/
 			},
 			gainerStocks: () => {
-				return fetch(fmp_url + "api/v3/stock/gainers?apikey=da6240539dc1685ff601c5c2edb3ff29", {
+				return fetch(fmp_url + `api/v3/stock/gainers?apikey=${fmp_api}`, {
 					method: "GET",
 					headers: {
 						"Content-Type": "application/json"

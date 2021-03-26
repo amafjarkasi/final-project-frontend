@@ -3,10 +3,9 @@ import { BrowserRouter as Router, Switch, Route, Link, NavLink, useParams } from
 import { NavbarLeft } from "../component/navbarleft";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
-// import "fetch-json";
 
-const fmp_url = "https://financialmodelingprep.com/";
-const fcs_url = "https://fcsapi.com/";
+const fmp_url = process.env.FMP_API_URL + "/";
+const fcs_url = process.env.FCS_API_URL + "/";
 
 export const Buy = props => {
 	const { store, actions } = useContext(Context);
@@ -15,7 +14,7 @@ export const Buy = props => {
 	const [stockprice, setStockPrice] = useState("0");
 	const [comparePrice, setComparePrice] = useState("0");
 	const [buyStock, setBuyStock] = useState("0");
-	const apikey = process.env.FMP_API_GLOBAL; // da6240539dc1685ff601c5c2edb3ff29
+	const apikey = process.env.FMP_API_GLOBAL;
 	const symbol = props.match.params.tickerSymbol;
 
 	function Analysis() {

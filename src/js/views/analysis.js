@@ -7,14 +7,14 @@ import { CompanySentiment } from "../component/companysentiment";
 import { KeyExecutives } from "../component/keyexecutives";
 import PropTypes from "prop-types";
 
-const fmp_url = "https://financialmodelingprep.com/";
-const fcs_url = "https://fcsapi.com/";
-const finn_token = "c0vsqsv48v6t383lq1kg";
+const fmp_url = process.env.FMP_API_URL + "/";
+const fcs_url = process.env.FCS_API_URL + "/";
+const finn_token = process.env.FINNHUB_API_GLOBAL;
 
 export const Analysis = props => {
 	const [analyzedata, setAnalyzeData] = useState([]);
 	const [comparisons, setComparisons] = useState([]);
-	const apikey = process.env.FMP_API_GLOBAL; // da6240539dc1685ff601c5c2edb3ff29
+	const apikey = process.env.FMP_API_GLOBAL;
 	const symbol = props.match.params.tickerSymbol;
 
 	function BuyStock() {

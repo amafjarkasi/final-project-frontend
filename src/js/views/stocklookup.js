@@ -9,7 +9,7 @@ export const StockLookup = () => {
 	const [results, setResults] = useState(false);
 	const [hideBuy, sethideBuy] = useState(true);
 	const [stocksymbol, setStockSymbol] = useState("");
-	const finn_token = "c0vsqsv48v6t383lq1kg";
+	const finn_token = process.env.FINNHUB_API_GLOBAL;
 
 	function BuyStock() {
 		if (!hideBuy) {

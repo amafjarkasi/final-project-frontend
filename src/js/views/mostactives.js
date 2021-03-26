@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
 
-// rest of your app
-
-const fmp_url = "https://financialmodelingprep.com/";
+const fmp_url = process.env.FMP_API_URL + "/";
 
 export const MostActives = () => {
 	const [data, setData] = useState([]);
@@ -42,6 +40,7 @@ export const MostActives = () => {
 				<div className="column is-10-tablet">
 					<div className="container is-fluid pr-7">
 						<section className="section">
+							<h3 className="title is-3 pb-3 is-spaced">Most Active Stocks</h3>
 							<Link
 								to={{
 									pathname: "/gainercomparison",

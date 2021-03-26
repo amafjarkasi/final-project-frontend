@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
 
-const fmp_url = "https://financialmodelingprep.com/";
+const fmp_url = process.env.FMP_API_URL + "/";
 
 export const MarketSectors = () => {
 	const _ = require("lodash");
@@ -41,9 +41,10 @@ export const MarketSectors = () => {
 				<div className="column is-10-tablet">
 					<div className="container is-fluid pr-7">
 						<section className="section">
-							<Link
+							<h3 className="title is-3 pb-3 is-spaced">Market Sector Performance</h3>
+							{/* <Link
 								to={{
-									pathname: "/gainercomparison",
+									pathname: "/sectorcomparison",
 									state: {
 										comparisons: comparisons
 									}
@@ -51,17 +52,16 @@ export const MarketSectors = () => {
 								<button type="button" className="button is-medium is-warning">
 									Compare
 								</button>
-							</Link>
+							</Link> */}
 							<br />
 							<div className="container pt-6 pr-7">
 								<div className="columns is-desktop">
 									<table className="table is-fullwidth">
 										<thead className="thead-dark is-fullwidth">
 											<tr>
-												<th scope="col" />
+												{/* <th scope="col" /> */}
 												<th scope="col">Sector</th>
 												<th scope="col">Changes</th>
-												<th scope="col">Analysis</th>
 											</tr>
 										</thead>
 										<tbody className="table-striped">
@@ -69,22 +69,19 @@ export const MarketSectors = () => {
 												? data.map((value, index) => {
 														return (
 															<tr key={index}>
-																<td>
+																{/* <td>
 																	<input
 																		type="checkbox"
 																		aria-label=""
 																		onClick={() =>
 																			setComparisons(
-																				comparisons.concat(value.ticker)
+																				comparisons.concat(value.sector)
 																			)
 																		}
 																	/>
-																</td>
+																</td> */}
 																<td>{value.sector}</td>
 																<td>{value.changesPercentage}</td>
-																<td>
-																	<button className="button is-success is-small fas fa-chart-line" />
-																</td>
 															</tr>
 														);
 												  })
