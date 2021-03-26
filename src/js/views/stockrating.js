@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
 import { CircularProgressbar } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
 import { Badge, Pane, Paragraph } from "evergreen-ui";
+import "react-circular-progressbar/dist/styles.css";
+
 
 const fmp = require("financialmodelingprep")(process.env.FMP_API_GLOBAL);
 
