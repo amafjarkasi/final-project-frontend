@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
 
-// rest of your app
-
-const fmp_url = "https://financialmodelingprep.com/";
+const fmp_url = process.env.FMP_API_URL + "/";
 
 export const MostLoser = () => {
 	const [data, setData] = useState([]);
