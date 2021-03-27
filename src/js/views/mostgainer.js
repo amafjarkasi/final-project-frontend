@@ -48,7 +48,9 @@ export const MostGainer = () => {
 										comparisons: comparisons
 									}
 								}}>
-								<button type="button" className="button is-medium is-warning">
+								<button
+									type="button"
+									className="button is-warning is-medium is-one-third-desktop is-align-content-center is-justify-content-center">
 									Compare
 								</button>
 							</Link>
