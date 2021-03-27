@@ -2,16 +2,17 @@
 @import url('https://unpkg.com/@djthoms/pretty-checkbox/dist/pretty-checkbox.min.css');
 @import url('https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css');
 
-
-// @import 'node_modules/@creativebulma/bulma-collapsible';
-//@import '~@creativebulma/bulma-collapsible';
-//@import "node_modules/bulma-responsive-tables/bulma-responsive-tables";
 @import "node_modules/bulmaswatch/spacelab/variables";
 @import "node_modules/bulma/bulma";
 @import "node_modules/bulmaswatch/spacelab/overrides";
 
 .table-striped>tr:nth-child(odd){
    background-color:rgb(209, 209, 209);
+}
+
+.is-active-here {
+    background-color: rgb(148, 180, 147);
+    color: white;
 }
 
 .center-graph {
@@ -42,10 +43,6 @@ body{
 
 }
 
-
-
-//stock image 
-
 .stock-image{
     border-radius: 5px;
     height: auto;
@@ -53,6 +50,3 @@ body{
     box-shadow: 0px 3px 10px rgba(0,0,0,0.15);
 
 }
-// .hero-body{
-//     background-image: url('../../img/stockpic.jpg');
-// }

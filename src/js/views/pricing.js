@@ -48,8 +48,8 @@ export const PricingTable = () => (
 								<li>Unlimited Market News</li>
 							</ul>
 							<Link className="has-text-white-bis" to="/signup">
-								<button className="button is-primary is-fullwidth" type="button">
-									Get started
+								<button className="button is-success is-fullwidth" type="button">
+									Sign up
 								</button>
 							</Link>
 						</div>
