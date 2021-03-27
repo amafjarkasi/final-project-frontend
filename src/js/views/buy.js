@@ -28,11 +28,6 @@ export const Buy = props => {
 	});
 
 	// const handleChange = event => setBuyStock({ ...buyStock, [event.target.name]: event.target.value });
-	function toasterPop() {
-		toaster.success("Stick around for 10 seconds", {
-			duration: 10
-		});
-	}
 
 	function Analysis() {
 		return (
