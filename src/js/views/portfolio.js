@@ -28,7 +28,7 @@ export const Portfolio = () => {
 										<input
 											className="input"
 											type="text"
-											placeholder="Question 1"
+											placeholder="How much do you want to invest?"
 											value={question_1}
 											onChange={e => setQuestion_1(e.target.value)}
 										/>

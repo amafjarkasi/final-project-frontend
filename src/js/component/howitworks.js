@@ -6,7 +6,7 @@ export const Howitworks = () => (
 			<div className="columns is-vcentered">
 				<div className="column is-6">
 					<h2 className="title">How it works</h2>
-					<h3 className="title is-5">{`Let's get you connected!`}</h3>
+					<h3 className="title is-5">{`Answer Three Simple Questions!`}</h3>
 					<p className="subtitle is-6">
 						{`We've designed a simple, efficient process for companies migrating to PiperNet. Here's how it
 						works.`}

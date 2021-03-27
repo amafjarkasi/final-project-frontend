@@ -17,18 +17,18 @@ export const Header = () => {
 					<div className="columns has-text-centered">
 						<div className="column is-3 mb-6">
 							<img src="https://bootstrapshuffle.com/placeholder/icons/check.svg" alt="" />
-							<h4 className="title is-4">Security</h4>
-							<p>Your data is virtually unhackable compared to traditional net</p>
+							<h4 className="title is-4">Trust</h4>
+							<p>Your data is safe when using Investico</p>
 						</div>
 						<div className="column is-3 mb-6">
 							<img src="https://bootstrapshuffle.com/placeholder/icons/check.svg" alt="" />
 							<h4 className="title is-4">Privacy</h4>
-							<p>Nobody is tracking you when your activity when you use PiperNet</p>
+							<p>Your information is safe when using Investico</p>
 						</div>
 						<div className="column is-3 mb-6">
 							<img src="https://bootstrapshuffle.com/placeholder/icons/check.svg" alt="" />
-							<h4 className="title is-4">Storage</h4>
-							<p>Store your data safely, and access it faster than ever</p>
+							<h4 className="title is-4">Top Notch</h4>
+							<p>We beat the competition providing you with the best investment choices</p>
 						</div>
 						<div className="column is-3 mb-6">
 							<img src="https://bootstrapshuffle.com/placeholder/icons/check.svg" alt="" />

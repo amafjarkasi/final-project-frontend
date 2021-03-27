@@ -8,8 +8,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			camilla_url: "",
 			base_url: "https://3000-green-seahorse-8vq8lccz.ws-us03.gitpod.io",
 			fmp_url: process.env.FMP_API_URL + "/",
-            fmp_api: process.env.FMP_API_GLOBAL,
-            
+			fmp_api: process.env.FMP_API_GLOBAL,
+
 			user: {
 				loggedIn: false,
 				username: "",
