@@ -12,7 +12,7 @@ export const NavbarLeft = () => {
 					<ul className="menu-list">
 						<li>
 							<NavLink to="/dashboard" activeClassName="is-active-here">
-								<span className="is-active-here">Dashboard</span>
+								Dashboard
 							</NavLink>
 						</li>
 						<li>
