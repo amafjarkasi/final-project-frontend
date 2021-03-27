@@ -5,7 +5,6 @@ import { CircularProgressbar } from "react-circular-progressbar";
 import { Badge, Pane, Paragraph } from "evergreen-ui";
 import "react-circular-progressbar/dist/styles.css";
 
-
 const fmp = require("financialmodelingprep")(process.env.FMP_API_GLOBAL);
 
 export const StockRating = () => {
@@ -93,9 +92,9 @@ export const StockRating = () => {
 								</p>
 							</div>
 							<div className="row mb-0 pt-4">
-								<div className="center-graph" style={{ width: 100, height: 100 }}>
+								<div className="container" style={{ width: 100, height: 100 }}>
 									<CircularProgressbar
-										className="center-graph"
+										className="is-flex is-vcentered is-align-self-center is-justify-content-center is-align-content-center"
 										value={value}
 										maxValue={5}
 										text={`${value}`}

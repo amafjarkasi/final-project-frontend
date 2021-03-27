@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink, useParams } from "react-router-dom";
 
+// rgb(148 180 147)
+
 export const NavbarLeft = () => {
 	return (
 		<>
@@ -9,17 +11,17 @@ export const NavbarLeft = () => {
 					<p className="menu-label">General</p>
 					<ul className="menu-list">
 						<li>
-							<NavLink to="/dashboard" activeClassName="is-active">
-								Dashboard
+							<NavLink to="/dashboard" activeClassName="is-active-here">
+								<span className="is-active-here">Dashboard</span>
 							</NavLink>
 						</li>
 						<li>
-							<NavLink to="/profile" activeClassName="is-active">
+							<NavLink to="/profile" activeClassName="is-active-here">
 								Profile
 							</NavLink>
 						</li>
 						<li>
-							<NavLink to="/portfolio" activeClassName="is-active">
+							<NavLink to="/portfolio" activeClassName="is-active-here">
 								Portfolio
 							</NavLink>
 						</li>
@@ -27,37 +29,37 @@ export const NavbarLeft = () => {
 					<p className="menu-label">Stock Research</p>
 					<ul className="menu-list">
 						<li>
-							<NavLink to="/stocklookup" activeClassName="is-active">
+							<NavLink to="/stocklookup" activeClassName="is-active-here">
 								Stock Lookup
 							</NavLink>
 						</li>
 						<li>
-							<NavLink to="/stockrating" activeClassName="is-active">
+							<NavLink to="/stockrating" activeClassName="is-active-here">
 								Stock Rating
 							</NavLink>
 						</li>
 						<li>
-							<NavLink to="/newslookup" activeClassName="is-active">
+							<NavLink to="/newslookup" activeClassName="is-active-here">
 								Company News
 							</NavLink>
 						</li>
 						<li>
-							<NavLink to="/marketsectors" activeClassName="is-active">
+							<NavLink to="/marketsectors" activeClassName="is-active-here">
 								Market Sectors
 							</NavLink>
 						</li>
 						<li>
-							<NavLink to="/mostactives" activeClassName="is-active">
+							<NavLink to="/mostactives" activeClassName="is-active-here">
 								Most Actives
 							</NavLink>
 						</li>
 						<li>
-							<NavLink to="/mostgainer" activeClassName="is-active">
+							<NavLink to="/mostgainer" activeClassName="is-active-here">
 								Most Gainer
 							</NavLink>
 						</li>
 						<li>
-							<NavLink to="/mostloser" activeClassName="is-active">
+							<NavLink to="/mostloser" activeClassName="is-active-here">
 								Most Loser
 							</NavLink>
 						</li>

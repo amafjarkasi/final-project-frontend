@@ -13,9 +13,19 @@ export const Buy = props => {
 	const [comparisons, setComparisons] = useState([]);
 	const [stockprice, setStockPrice] = useState("0");
 	const [comparePrice, setComparePrice] = useState("0");
-	const [buyStock, setBuyStock] = useState("0");
+
 	const apikey = process.env.FMP_API_GLOBAL;
 	const symbol = props.match.params.tickerSymbol;
+
+	const [buyStock, setBuyStock] = useState({
+		symbol: "",
+		price: "",
+		date: "",
+		quantity: "",
+		total_purchase: ""
+	});
+
+	// const handleChange = event => setBuyStock({ ...buyStock, [event.target.name]: event.target.value });
 
 	function Analysis() {
 		return (
@@ -45,6 +55,7 @@ export const Buy = props => {
 			.then(resp => {
 				setAnalyzeData(resp);
 				setComparePrice(resp[0].price);
+				setBuyStock({ ...buyStock, date: new Date().toLocaleDateString(), symbol: symbol });
 				return true;
 			})
 			.catch(err => {
@@ -55,6 +66,13 @@ export const Buy = props => {
 
 	function handlePriceChange(e) {
 		setStockPrice((comparePrice * e.target.value).toFixed(2));
+		let updated_purchase_price = (comparePrice * e.target.value).toFixed(2);
+		setBuyStock({
+			...buyStock,
+			price: `${comparePrice}`,
+			total_purchase: updated_purchase_price,
+			quantity: e.target.value
+		});
 	}
 
 	return (
@@ -89,7 +107,9 @@ export const Buy = props => {
 																: value.companyName}
 														</td>
 														<td>
-															${value.price === null ? "N/A" : value.price.toFixed(2)}
+															{value.price === null
+																? "N/A"
+																: "$" + value.price.toFixed(2)}
 														</td>
 														<td>
 															<div className="field has-addons is-small">
@@ -105,8 +125,7 @@ export const Buy = props => {
 																		className="input is-small"
 																		type="text"
 																		placeholder="Amount of shares"
-																		// value={buy}
-																		//onChange={e => setBuyStock(e.target.value)}
+																		value={buyStock.quantity}
 																		onChange={handlePriceChange}
 																	/>
 																</p>

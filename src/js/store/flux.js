@@ -8,8 +8,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			camilla_url: "",
 			base_url: "https://3000-green-seahorse-8vq8lccz.ws-us03.gitpod.io",
 			fmp_url: process.env.FMP_API_URL + "/",
-            fmp_api: process.env.FMP_API_GLOBAL,
-            
+			fmp_api: process.env.FMP_API_GLOBAL,
+
 			user: {
 				loggedIn: false,
 				username: "",
@@ -188,17 +188,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 						return false;
 					});
 			},
-			buy: (price, quantity, symbol, total_purchase) => {
+			buy: buyStock => {
 				return fetch(getStore().base_url + "/buy", {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json"
 					},
 					body: JSON.stringify({
-						price: price,
-						quantity: quantity,
-						symbol: symbol,
-						total_purchase: total_purchase
+						price: buyStock.price,
+						date: buyStock.date,
+						quantity: buyStock.quantity,
+						symbol: buyStock.symbol,
+						total_purchase: buyStock.total_purchase
 					})
 				})
 					.then(resp => {
