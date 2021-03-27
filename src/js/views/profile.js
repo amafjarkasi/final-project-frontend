@@ -22,7 +22,14 @@ export const Profile = () => {
 	const handleQuestion2Change = e => {
 		console.log(question2[e.target.value]);
 	};
-
+	const handleQuestion3Change = e => {
+		console.log(question3[e.target.value]);
+	};
+	const [profile, setProfile] = useState({
+		question1: "",
+		question2: "",
+		question3: ""
+	});
 	return (
 		<>
 			<div className="columns is-multiline">
@@ -79,11 +86,12 @@ export const Profile = () => {
 										<div className="column">
 											<h6 className="title is-6">How long do you want to invest?</h6>
 											<div className="select is-normal">
-												<select>
-													<option selected>Select dropdown</option>
-													<option>Quick Flip</option>
-													<option>Short Term</option>
-													<option>Long Term</option>
+												<select onChange={e => handleQuestion3Change(e)}>
+													{question3.map((value, index) => (
+														<option key={index} value={index}>
+															{value}
+														</option>
+													))}
 												</select>
 											</div>
 										</div>
@@ -91,16 +99,7 @@ export const Profile = () => {
 									<button
 										type="button"
 										className="button is-success"
-										// onClick={() =>
-										// 	actions.profile(
-										// 		question_1,
-										// 		question_2,
-										// 		question_3
-										// 		// question_4,
-										// 		// question_5
-										// 	)
-										// }
-									>
+										onClick={() => actions.profile(question1, question2, question3)}>
 										Save Profile
 									</button>
 								</div>
