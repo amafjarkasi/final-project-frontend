@@ -29,6 +29,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 				question_3: "",
 				question_4: "",
 				question_5: ""
+			},
+			profile: {
+				question1: "",
+				question2: "",
+				question3: ""
 			}
 		},
 		actions: {
@@ -168,18 +173,50 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 				});
 			},
-			portfolio: (question_1, question_2, question_3, question_4, question_5) => {
-				return fetch(getStore().base_url + "/portfolio", {
+			// portfolio: (question_1, question_2, question_3, question_4, question_5) => {
+			// 	return fetch(getStore().base_url + "/portfolio", {
+			// 		method: "POST",
+			// 		headers: {
+			// 			"Content-Type": "application/json"
+			// 		},
+			// 		body: JSON.stringify({
+			// 			question_1: question_1,
+			// 			question_2: question_2,
+			// 			question_3: question_3,
+			// 			question_4: question_4,
+			// 			question_5: question_5
+			// 		})
+			// 	})
+			// 		.then(resp => {
+			// 			if (!resp.ok) {
+			// 				throw new Error(resp.statusText);
+			// 			}
+			// 			return resp.json();
+			// 		})
+			// 		.then(data => {
+			// 			// let store = getStore();
+			// 			//  store.user = {
+			// 			// 	token: data.jwt,
+			// 			// 	info: data.user
+			// 			// };
+			// 			// setStore(store);
+			// 			return true;
+			// 		})
+			// 		.catch(err => {
+			// 			console.error(err);
+			// 			return false;
+			// 		});
+			// },
+			profile: profile => {
+				return fetch(getStore().base_url + "/profile", {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json"
 					},
 					body: JSON.stringify({
-						question_1: question_1,
-						question_2: question_2,
-						question_3: question_3,
-						question_4: question_4,
-						question_5: question_5
+						question1: profile.question1,
+						question2: profile.question2,
+						question3: profile.question3
 					})
 				})
 					.then(resp => {
@@ -189,12 +226,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 						return resp.json();
 					})
 					.then(data => {
-						// let store = getStore();
-						//  store.user = {
-						// 	token: data.jwt,
-						// 	info: data.user
-						// };
-						// setStore(store);
 						return true;
 					})
 					.catch(err => {
