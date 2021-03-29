@@ -6,6 +6,7 @@ const axios = require("axios");
 
 export const StockLookup = () => {
 	const [stockfind, setStockFind] = useState();
+	const [getStocks, setStocks] = useState();
 	const [results, setResults] = useState(false);
 	const [hideBuy, sethideBuy] = useState(true);
 	const [stocksymbol, setStockSymbol] = useState("");
@@ -56,7 +57,9 @@ export const StockLookup = () => {
 		var _ = require("lodash");
 		var obj = stockfind.metric;
 		var rows = [];
-		//console.log(obj);
+
+		const mapped = Object.entries(getStocks).map(([k, v]) => `${k}_${v}`);
+		console.log(mapped);
 
 		if (!_.isEmpty(obj)) {
 			for (const prop in obj) {
@@ -64,21 +67,40 @@ export const StockLookup = () => {
 				rows.push(`${prop_convert}: ${obj[prop]}`);
 			}
 			return (
-				<div className="box">
-					<div className="list">
-						<h4 className="title is-4 pb-3 is-spaced has-text-danger has-text-centered">
-							Basic Financials
-						</h4>
-						<br />
-						<ul>
-							{rows.map((stockoutput, index) => (
-								<div className="list-item" key={index}>
-									<li>{stockoutput}</li>
-								</div>
-							))}
-						</ul>
+				<>
+					<div className="box">
+						<div className="list">
+							<h4 className="title is-4 pb-3 is-spaced has-text-danger has-text-centered">
+								Annual Basic Financials
+							</h4>
+							<table className="table is-fullwidth">
+								<thead className="thead-dark is-fullwidth">
+									<tr>
+										<th scope="col">52 Week</th>
+										<th scope="col">Asset Turnover</th>
+										<th scope="col">Cash Per Share</th>
+										<th scope="col">Current Ratio</th>
+										<th scope="col">EPS</th>
+										<th scope="col">Gross Margin</th>
+										<th scope="col">LT Debt Eq</th>
+										<th scope="col">Net Debt</th>
+										<th scope="col">Net Profit Margin</th>
+										<th scope="col">Operating Margin</th>
+										<th scope="col">Quick Ratio</th>
+									</tr>
+								</thead>
+							</table>
+							<ul>
+								{mapped.map((value, index) => console.log("$", value))}
+								{rows.map((stockoutput, index) => (
+									<div className="list-item" key={index}>
+										<li>{stockoutput}</li>
+									</div>
+								))}
+							</ul>
+						</div>
 					</div>
-				</div>
+				</>
 			);
 		} else {
 			sethideBuy(true);
@@ -104,6 +126,7 @@ export const StockLookup = () => {
 				.get(`https://finnhub.io/api/v1/stock/metric?symbol=${stocksymbol}&metric=all&token=${finn_token}`)
 				.then(function(response) {
 					setStockFind(response.data);
+					setStocks(response.data);
 					setResults(true);
 					sethideBuy(false);
 				})
@@ -129,51 +152,50 @@ export const StockLookup = () => {
 						<section className="section">
 							<h3 className="title is-3 pb-3 is-spaced">Quick Stock Lookup</h3>
 							<div className="container pt-3 pr-7">
-								<div className="columns is-desktop">
-									<table className="table is-fullwidth">
-										<div className="box">
-											<div className="field has-addons is-medium">
-												<p className="control is-medium">
-													<input
-														id="inputStock"
-														className="input is-medium"
-														type="text"
-														placeholder="Stock symbol"
-														onChange={e => setStockSymbol(e.target.value)}
-													/>
-												</p>
-												<p className="control is-medium">
-													<button
-														className="button is-medium is-danger"
-														type="button"
-														data-toggle="tooltip"
-														data-placement="top"
-														title="Search"
-														onClick={handleStockLookup}>
-														<span className="icon">
-															<i className="fas fa-search" />
-														</span>
-													</button>
-												</p>
-												<p className="control is-medium">
-													<button
-														className="button is-medium is-warning"
-														type="button"
-														data-toggle="tooltip"
-														data-placement="top"
-														title="Clear"
-														onClick={clearStockLookup}>
-														<span className="icon">
-															<i className="fas fa-trash-alt" />
-														</span>
-													</button>
-												</p>
-												{results ? <BuyStock /> : ""}
-											</div>
+								{/* <div className="columns is-desktop"> */}
+								<div className="container is-fullwidth">
+									<div className="box is-fullwidth">
+										<div className="field has-addons is-medium">
+											<p className="control is-medium">
+												<input
+													id="inputStock"
+													className="input is-medium"
+													type="text"
+													placeholder="Stock symbol"
+													onChange={e => setStockSymbol(e.target.value)}
+												/>
+											</p>
+											<p className="control is-medium">
+												<button
+													className="button is-medium is-danger"
+													type="button"
+													data-toggle="tooltip"
+													data-placement="top"
+													title="Search"
+													onClick={handleStockLookup}>
+													<span className="icon">
+														<i className="fas fa-search" />
+													</span>
+												</button>
+											</p>
+											<p className="control is-medium">
+												<button
+													className="button is-medium is-warning"
+													type="button"
+													data-toggle="tooltip"
+													data-placement="top"
+													title="Clear"
+													onClick={clearStockLookup}>
+													<span className="icon">
+														<i className="fas fa-trash-alt" />
+													</span>
+												</button>
+											</p>
+											{results ? <BuyStock /> : ""}
 										</div>
-										{!results ? "" : <Lookup />}
-									</table>
+									</div>
 								</div>
+								{!results ? "" : <Lookup />}
 							</div>
 						</section>
 					</div>
