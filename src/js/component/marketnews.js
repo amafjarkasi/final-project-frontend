@@ -26,7 +26,7 @@ export const MarketNews = () => {
 					if (index < 5) {
 						return (
 							<>
-								<div className="row mb-0 pb-2">
+								<div className="row mb-0 pb-2" >
 									<article className="media is-small mb-0 pb-0" key={index}>
 										<figure className="media-left">
 											<p className="image is-128x128">
