@@ -126,40 +126,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 				});
 			},
-			// portfolio: (question_1, question_2, question_3, question_4, question_5) => {
-			// 	return fetch(getStore().base_url + "/portfolio", {
-			// 		method: "POST",
-			// 		headers: {
-			// 			"Content-Type": "application/json"
-			// 		},
-			// 		body: JSON.stringify({
-			// 			question_1: question_1,
-			// 			question_2: question_2,
-			// 			question_3: question_3,
-			// 			question_4: question_4,
-			// 			question_5: question_5
-			// 		})
-			// 	})
-			// 		.then(resp => {
-			// 			if (!resp.ok) {
-			// 				throw new Error(resp.statusText);
-			// 			}
-			// 			return resp.json();
-			// 		})
-			// 		.then(data => {
-			// 			// let store = getStore();
-			// 			//  store.user = {
-			// 			// 	token: data.jwt,
-			// 			// 	info: data.user
-			// 			// };
-			// 			// setStore(store);
-			// 			return true;
-			// 		})
-			// 		.catch(err => {
-			// 			console.error(err);
-			// 			return false;
-			// 		});
-			// },
+
 			profile: (question1, question2, question3) => {
 				return fetch(getStore().base_url + "/profile", {
 					method: "GET, POST",
