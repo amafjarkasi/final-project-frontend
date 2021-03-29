@@ -7,7 +7,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			amaf_url: "",
 			hector_url: "",
 			camilla_url: "",
-			base_url: "https://3000-green-seahorse-8vq8lccz.ws-us03.gitpod.io",
+			base_url: "https://3000-amber-pig-r6cup6aq.ws-us03.gitpod.io",
 			fmp_url: process.env.FMP_API_URL + "/",
 			fmp_api: process.env.FMP_API_GLOBAL,
 			display_success: 0,
@@ -58,33 +58,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
 			},
-			gainerStocks: () => {
-				return fetch(fmp_url + `api/v3/stock/gainers?apikey=${fmp_api}`, {
-					method: "GET",
-					headers: {
-						"Content-Type": "application/json"
-					}
-				})
-					.then(resp => {
-						if (!resp.ok) {
-							throw new Error(resp.statusText);
-						}
-						return resp.json();
-					})
-					.then(data => {
-						let store = getStore();
-						// store.user = {
-						// 	token: data.jwt,
-						// 	info: data.user
-						// };
-						setStore(store);
-						return true;
-					})
-					.catch(err => {
-						console.error(err);
-						return false;
-					});
-			},
 			signupPage: (full_name, email, password) => {
 				return fetch(getStore().base_url + "/signup", {
 					method: "POST",
@@ -104,12 +77,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 						return resp.json();
 					})
 					.then(data => {
-						// let store = getStore();
-						//  store.user = {
-						// 	token: data.jwt,
-						// 	info: data.user
-						// };
-						// setStore(store);
 						return true;
 					})
 					.catch(err => {
@@ -234,7 +201,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 			},
 			buy: buyStock => {
-				return fetch(getStore().base_url + "/buy", {
+				fetch(getStore().base_url + "/buy", {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json"
@@ -251,22 +218,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 						if (!resp.ok) {
 							throw new Error(resp.statusText);
 						}
-						getActions().popToasterSuccess();
+						//getActions().popToasterSuccess();
 						return resp.json();
 					})
 					.then(data => {
-						// let store = getStore();
-						//  store.user = {
-						// 	token: data.jwt,
-						// 	info: data.user
-						// };
-						// setStore(store);
-						getActions().popToasterSuccess();
 						return true;
 					})
 					.catch(err => {
 						console.error(err);
-						getActions().popToasterFail();
+						//getActions().popToasterFail();
 						return false;
 					});
 			},
