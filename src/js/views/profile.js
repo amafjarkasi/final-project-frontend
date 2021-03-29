@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
-// import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
-// import Charlie from "../../img/charlie.jpg";
 import { AvatarGenerator } from "random-avatar-generator";
 import { Context } from "../store/appContext";
 
