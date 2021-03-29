@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link, NavLink, useParams } from
 import { NavbarLeft } from "../component/navbarleft";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
+import { Button, toaster } from "evergreen-ui";
 
 const fmp_url = process.env.FMP_API_URL + "/";
 const fcs_url = process.env.FCS_API_URL + "/";
@@ -13,6 +14,7 @@ export const Buy = props => {
 	const [comparisons, setComparisons] = useState([]);
 	const [stockprice, setStockPrice] = useState("0");
 	const [comparePrice, setComparePrice] = useState("0");
+	const [getToasterPop, setToasterPop] = useState("0");
 
 	const apikey = process.env.FMP_API_GLOBAL;
 	const symbol = props.match.params.tickerSymbol;
@@ -26,6 +28,13 @@ export const Buy = props => {
 	});
 
 	// const handleChange = event => setBuyStock({ ...buyStock, [event.target.name]: event.target.value });
+
+	function popToaster() {
+		toaster.success("Your purchase has been successful!", {
+			description: "All purchases will be added to your transaction history.",
+			duration: 10
+		});
+	}
 
 	function Analysis() {
 		return (
@@ -130,12 +139,23 @@ export const Buy = props => {
 																	/>
 																</p>
 																<p className="control is-small">
-																	<a
+																	{/* <a
 																		type="button"
-																		className="button is-small is-primary"
-																		onClick={() => actions.buy(buyStock)}>
+																		onClick={() => actions.buy(buyStock)}> */}
+																	<Button
+																		is="a"
+																		appearance="primary"
+																		intent="warning"
+																		marginLeft={10}
+																		height={30}
+																		onClick={() =>
+																			actions.buy(buyStock) === true
+																				? popToaster()
+																				: ""
+																		}>
 																		Purchase
-																	</a>
+																	</Button>
+																	{/* </a> */}
 																</p>
 															</div>
 														</td>

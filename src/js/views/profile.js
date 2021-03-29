@@ -58,7 +58,7 @@ export const Profile = () => {
 									</div>
 									<div className="columns pt-3 pb-4 is-rounded">
 										<div className="column">
-											<h6 className="title is-6">How much do you want to invest?</h6>
+											<h6 className="title is-6">Your initial investment?</h6>
 											<div className="select is-normal">
 												<select onChange={e => handleQuestion1Change(e)}>
 													{question1.map((value, index) => (
@@ -70,7 +70,7 @@ export const Profile = () => {
 											</div>
 										</div>
 										<div className="column">
-											<h6 className="title is-6">Investment Style</h6>
+											<h6 className="title is-6">Your investment style?</h6>
 											<div className="select is-normal">
 												<select onChange={e => handleQuestion2Change(e)}>
 													{question2.map((value, index) => (
