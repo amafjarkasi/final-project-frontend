@@ -19,9 +19,8 @@ export const MarketNews = () => {
 	const result = getNews.filter(article => article.category == "business");
 	return (
 		<>
-			{/* <div className="box"> */}
 			<div className="rows">
-				<h2 className="title">Market News</h2>
+				<h3 className="title is-3 pb-3 is-spaced">Market News</h3>
 				{result.map((news, index) => {
 					if (index < 5) {
 						return (
@@ -68,7 +67,6 @@ export const MarketNews = () => {
 					}
 				})}
 			</div>
-			{/* </div> */}
 		</>
 	);
 };

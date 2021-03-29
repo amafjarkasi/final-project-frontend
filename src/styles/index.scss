@@ -11,8 +11,8 @@
 }
 
 .is-active-here {
-    background-color: rgb(148, 180, 147);
-    color: white;
+    background-color: rgb(148, 180, 147) !important;
+    color: unset !important;
 }
 
 .center-graph {

@@ -81,7 +81,21 @@ export const MarketSectors = () => {
 																	/>
 																</td> */}
 																<td>{value.sector}</td>
-																<td>{value.changesPercentage}</td>
+																<td
+																	style={{
+																		color:
+																			parseFloat(value.changesPercentage) < 0
+																				? "red"
+																				: "green"
+																	}}>
+																	{parseFloat(value.changesPercentage).toFixed(2) < 0
+																		? parseFloat(value.changesPercentage).toFixed(2)
+																		: "+" +
+																		  parseFloat(value.changesPercentage).toFixed(
+																				2
+																		  )}
+																	%
+																</td>
 															</tr>
 														);
 												  })

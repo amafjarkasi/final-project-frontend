@@ -10,8 +10,8 @@ generator.generateRandomAvatar();
 
 export const Profile = () => {
 	const { store, actions } = useContext(Context);
-	const [question1, setQuestion1] = useState(["Select Dropdown", "$0 - $10,000", "$10,001 - $50,000", "$50,000 +"]);
-	const [question2, setQuestion2] = useState(["Select Dropdown", "Passive", "Aggressive", "Mixed"]);
+	const [question1, setQuestion1] = useState(["$0 - $10,000", "$10,001 - $50,000", "$50,000 +"]);
+	const [question2, setQuestion2] = useState(["Passive", "Aggressive", "Mixed"]);
 	const [question3, setQuestion3] = useState(["Quick Flip", "Short Term", "Long Term"]);
 
 	const handleQuestion1Change = e => {
@@ -35,7 +35,7 @@ export const Profile = () => {
 					<div className="container is-fluid pr-5">
 						<div className="flex-shrink-0 pt-5">
 							<div className="box has-text-centered has-background-white">
-								<div>
+								<div className="pb-3">
 									<div className="flex-shrink-0">
 										<div className="profile-image pb-1">
 											<a href="#" className="image is-64x64 m-auto">
@@ -51,8 +51,8 @@ export const Profile = () => {
 										<p className="has-text-grey-dark">Charlie</p>
 										<p className="has-text-grey-dark-light is-size-7">CTO</p>
 									</div>
-									<div className="columns pt-3 pb-4 is-rounded">
-										<div className="column">
+									<div className="columns pt-3 pb-5">
+										<div className="column is-one-third mr-5">
 											<h6 className="title is-6">Your initial investment?</h6>
 											<div className="select is-normal">
 												<select onChange={e => handleQuestion1Change(e)}>
@@ -64,7 +64,8 @@ export const Profile = () => {
 												</select>
 											</div>
 										</div>
-										<div className="column">
+
+										<div className="column is-one-third mr-5">
 											<h6 className="title is-6">Your investment style?</h6>
 											<div className="select is-normal">
 												<select onChange={e => handleQuestion2Change(e)}>
@@ -76,10 +77,9 @@ export const Profile = () => {
 												</select>
 											</div>
 										</div>
-									</div>
-									<div className="columns pt-3 pb-4 is-rounded">
-										<div className="column">
-											<h6 className="title is-6">How long do you want to invest?</h6>
+
+										<div className="column is-one-third">
+											<h6 className="title is-6">Length of investment?</h6>
 											<div className="select is-normal">
 												<select onChange={e => handleQuestion3Change(e)}>
 													{question3.map((value, index) => (
@@ -91,6 +91,7 @@ export const Profile = () => {
 											</div>
 										</div>
 									</div>
+
 									<button
 										type="button"
 										className="button is-success"

@@ -2,9 +2,16 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import { NavbarLeft } from "../component/navbarleft";
 
+const formatter = new Intl.NumberFormat("en-US", {
+	style: "currency",
+	currency: "USD",
+	minimumFractionDigits: 2
+});
+
 const fmp_url = process.env.FMP_API_URL + "/";
 
 export const MostActives = () => {
+	var _ = require("lodash");
 	const [data, setData] = useState([]);
 	const [comparisons, setComparisons] = useState([]);
 	const apikey = process.env.FMP_API_GLOBAL;
@@ -85,9 +92,29 @@ export const MostActives = () => {
 																	/>
 																</td>
 																<td>{value.ticker}</td>
-																<td>{value.changes}</td>
-																<td>{value.price}</td>
-																<td>{value.changesPercentage}</td>
+																<td>{value.changes.toFixed(2) + "%"}</td>
+																<td>
+																	{value.price == null
+																		? "N/A"
+																		: formatter.format(value.price)}
+																</td>
+																<td
+																	style={{
+																		color:
+																			parseFloat(
+																				_.trim(
+																					_.trim(
+																						value.changesPercentage,
+																						"%)"
+																					),
+																					"("
+																				)
+																			) < 0
+																				? "red"
+																				: "green"
+																	}}>
+																	{value.changesPercentage}
+																</td>
 																<td>
 																	{value.companyName.length > 30
 																		? value.companyName.slice(0, 30) + "..."

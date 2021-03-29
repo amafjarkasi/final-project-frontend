@@ -39,7 +39,7 @@ export const Hero = () => {
 								<div className="columns">
 									<div className="column is-half-desktop">
 										<form>
-											<div className="field">
+											{/* <div className="field">
 												<div className="control">
 													<input
 														className="input"
@@ -49,8 +49,8 @@ export const Hero = () => {
 														onChange={e => setFullName(e.target.value)}
 													/>
 												</div>
-											</div>
-											<div className="field">
+											</div> */}
+											{/* <div className="field">
 												<div className="control">
 													<input
 														className="input"
@@ -60,8 +60,8 @@ export const Hero = () => {
 														onChange={e => setEmail(e.target.value)}
 													/>
 												</div>
-											</div>
-											<div className="field">
+											</div> */}
+											{/* <div className="field">
 												<div className="control">
 													<input
 														className="input"
@@ -71,10 +71,17 @@ export const Hero = () => {
 														onChange={e => setPassword(e.target.value)}
 													/>
 												</div>
-											</div>
-											<div className="field">
+											</div> */}
+											<div className="field is-grouped">
 												<div className="control">
-													<button className="button is-success pl-5 pr-5">Sign up</button>
+													<Link to="/login">
+														<button className="button is-success pl-5 pr-5">Log in</button>
+													</Link>
+												</div>
+												<div className="control">
+													<Link to="/signup">
+														<button className="button is-success pl-5 pr-5">Sign up</button>
+													</Link>
 												</div>
 											</div>
 										</form>

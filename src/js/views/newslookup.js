@@ -63,7 +63,7 @@ export const NewsLookup = () => {
 						{stockfind.map((news, index) => {
 							return (
 								<>
-									<div className="row mb-0 pb-0">
+									<div className="row mb-0 pb-0 is-striped">
 										<article className="media is-small mb-0 pb-0" key={index}>
 											<figure className="media-left">
 												<p className="image is-128x128">
