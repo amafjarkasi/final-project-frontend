@@ -25,11 +25,11 @@ export const Profile = () => {
 	const handleQuestion3Change = e => {
 		console.log(question3[e.target.value]);
 	};
-	const [profile, setProfile] = useState({
-		question1: "",
-		question2: "",
-		question3: ""
-	});
+	// const [profile, setProfile] = useState({
+	// 	question1: "",
+	// 	question2: "",
+	// 	question3: ""
+	// });
 	return (
 		<>
 			<div className="columns is-multiline">

@@ -21,13 +21,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				email: "",
 				password: ""
 			},
-			portfolio: {
-				question_1: "",
-				question_2: "",
-				question_3: "",
-				question_4: "",
-				question_5: ""
-			},
+
 			profile: {
 				question1: "",
 				question2: "",
@@ -122,15 +116,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.then(data => {
 						let store = getStore();
-						// store.user = {
-						// 	loggedIn: true,
-						// 	email: email,
-						// 	token: data.jwt,
-						// 	info: data.user
-						// };
-						// setStore(store);
-						// sessionStorage.setItem("currentUser", JSON.stringify(data));
-						// sessionStorage.setItem("loggedIn", true);
+
 						setStore({
 							token: data
 						});
@@ -193,16 +179,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// 			return false;
 			// 		});
 			// },
-			profile: profile => {
+			profile: (question1, question2, question3) => {
 				return fetch(getStore().base_url + "/profile", {
-					method: "POST",
+					method: "GET, POST",
 					headers: {
 						"Content-Type": "application/json"
 					},
 					body: JSON.stringify({
-						question1: profile.question1,
-						question2: profile.question2,
-						question3: profile.question3
+						question1: "how much do you want to invest",
+						question2: "investment style",
+						question3: "how long do you want to invest"
 					})
 				})
 					.then(resp => {
