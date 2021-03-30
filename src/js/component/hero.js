@@ -75,12 +75,12 @@ export const Hero = () => {
 											<div className="field is-grouped">
 												<div className="control">
 													<Link to="/login">
-														<button className="button is-success pl-5 pr-5">Log in</button>
+														<button className="button is-danger pl-5 pr-5">Log in</button>
 													</Link>
 												</div>
 												<div className="control">
 													<Link to="/signup">
-														<button className="button is-success pl-5 pr-5">Sign up</button>
+														<button className="button is-danger pl-5 pr-5">Sign up</button>
 													</Link>
 												</div>
 											</div>
