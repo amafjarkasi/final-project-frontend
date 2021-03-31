@@ -32,20 +32,63 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
+			async buy(buyStock) {
+				const store = getStore();
+				const actions = getActions();
+
+				await fetch(store.base_url + "/buy", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({
+						price: buyStock.price,
+						date: buyStock.date,
+						quantity: buyStock.quantity,
+						symbol: buyStock.symbol,
+						total_purchase: buyStock.total_purchase
+					})
+				})
+					.then(resp => {
+						if (!resp.ok) {
+							throw new Error(resp.statusText);
+						}
+						return resp.json();
+					})
+					.then(data => {
+						setStore({ display_success: 1 });
+						actions.popToasterSuccess();
+						return data;
+					})
+					.catch(err => {
+						setStore({ display_success: 2 });
+						actions.popToasterFail();
+						console.error(err);
+						return false;
+					});
 			},
+			// exampleFunction: () => {
+			// 	getActions().changeColor(0, "green");
+			// },
 			popToasterSuccess: () => {
+				const store = getStore();
+				const actions = getActions();
+				console.log("!! success");
 				toaster.success("Your purchase has been successful!", {
 					description: "All purchases will be added to your transaction history.",
 					duration: 10
 				});
+				setStore({ display_success: 0 });
 			},
 			popToasterFail: () => {
+				const store = getStore();
+				const actions = getActions();
+				console.log("!! failed");
 				toaster.danger("Your purchase has failed!", {
 					description: "Please try your purchase again in a few minutes.",
 					duration: 10
 				});
+				setStore({ display_success: 0 });
 			},
 			loadSomeData: () => {
 				/**
@@ -78,8 +121,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 						return false;
 					});
 			},
-			login: (email, password) => {
-				return fetch(getStore().base_url + "/login", {
+			async login(email, password) {
+				const store = getStore();
+				await fetch(store.base_url + "/login", {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json"
@@ -96,10 +140,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 						return resp.json();
 					})
 					.then(data => {
-						let store = getStore();
-
+						setStore({ token: data.jwt });
+						let user_profile = data.user;
 						setStore({
-							token: data
+							user: {
+								email: user_profile.email,
+								full_name: user_profile.full_name,
+								id: user_profile.id,
+								loggedIn: true,
+								token: data.jwt
+							}
 						});
 					})
 					.catch(err => {
@@ -153,37 +203,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 						return false;
 					});
 			},
-			buy: buyStock => {
-				fetch(getStore().base_url + "/buy", {
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json"
-					},
-					body: JSON.stringify({
-						price: buyStock.price,
-						date: buyStock.date,
-						quantity: buyStock.quantity,
-						symbol: buyStock.symbol,
-						total_purchase: buyStock.total_purchase
-					})
-				})
-					.then(resp => {
-						if (!resp.ok) {
-							throw new Error(resp.statusText);
-						}
-						return resp.json();
-					})
-					.then(data => {
-						setStore({ display_success: "1" });
-						return true;
-					})
-					.catch(err => {
-						console.error(err);
-						setStore({ display_success: "2" });
-						return false;
-					});
-			},
-
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();

@@ -10,14 +10,12 @@ const fcs_url = process.env.FCS_API_URL + "/";
 
 export const Buy = props => {
 	const { store, actions } = useContext(Context);
-	const [analyzedata, setAnalyzeData] = useState([]);
-	const [comparisons, setComparisons] = useState();
-	const [stockprice, setStockPrice] = useState("0");
-	const [comparePrice, setComparePrice] = useState("0");
-	const [getToasterPop, setToasterPop] = useState("0");
-
 	const apikey = process.env.FMP_API_GLOBAL;
 	const symbol = props.match.params.tickerSymbol;
+	const [analyzedata, setAnalyzeData] = useState([]);
+	const [stockprice, setStockPrice] = useState("0");
+	const [comparePrice, setComparePrice] = useState("0");
+	// const [resetted, setResetted] = useState(false);
 
 	const [buyStock, setBuyStock] = useState({
 		symbol: "",
@@ -27,19 +25,22 @@ export const Buy = props => {
 		total_purchase: ""
 	});
 
-	function popToaster() {
-		setComparisons(actions.buy(buyStock));
-		const getToasterPop = async () => {
-			if (store.display_success != 0 || store.display_success == 1 || comparisons != null) {
-				actions.popToasterSuccess();
-				setStore({ display_success: "0" });
-			} else if (store.display_success != 0 || store.display_success == 2 || comparisons != null) {
-				actions.popToasterFail();
-				setStore({ display_success: "0" });
-			}
-		};
-		getToasterPop();
-	}
+	// function checkToaster() {
+	// 	actions.buy(buyStock);
+	// 	if (store.display_success == 1) {
+	// 		store.actions.popToasterSuccess();
+	// 	} else if (store.display_success == 2) {
+	// 		store.actions.popToasterFail();
+	// 	}
+	// }
+
+	// const getToasterPop = () => {
+	// 	if (store.display_success == 1) {
+	// 		store.actions.popToasterSuccess();
+	// 	} else if (store.display_success == 2) {
+	// 		store.actions.popToasterFail();
+	// 	}
+	// };
 
 	function Analysis() {
 		return (
@@ -144,23 +145,15 @@ export const Buy = props => {
 																	/>
 																</p>
 																<p className="control is-small">
-																	{/* <a
-																		type="button"
-																		onClick={() => actions.buy(buyStock)}> */}
 																	<Button
 																		is="a"
 																		appearance="primary"
 																		intent="warning"
 																		marginLeft={10}
 																		height={30}
-																		onClick={() =>
-																			actions.buy(buyStock) === true
-																				? popToaster()
-																				: ""
-																		}>
+																		onClick={() => actions.buy(buyStock)}>
 																		Purchase
 																	</Button>
-																	{/* </a> */}
 																</p>
 															</div>
 														</td>

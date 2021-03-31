@@ -11,6 +11,7 @@ import { ContactTeam } from "./views/contact";
 import { PricingTable } from "./views/pricing";
 import { Features } from "./views/features";
 import { Profile } from "./views/profile";
+import { Transactions } from "./views/transactions";
 import { Navbar } from "./component/navbar";
 import { NavbarLeft } from "./component/navbarleft";
 import { Footer } from "./component/footer";
@@ -55,6 +56,7 @@ const Layout = () => {
 						<Route exact path="/mostgainer" component={MostGainer} />
 						<Route exact path="/mostloser" component={MostLoser} />
 						<Route exact path="/mostactives" component={MostActives} />
+						<Route exact path="/transactions" component={Transactions} />
 						<Route exact path="/marketsectors" component={MarketSectors} />
 						<Route exact path="/gainercomparison" component={GainerComparison} />
 						<Route exact path="/sectorcomparison" component={SectorComparison} />

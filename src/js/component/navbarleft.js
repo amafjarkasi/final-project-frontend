@@ -67,7 +67,9 @@ export const NavbarLeft = () => {
 					<p className="menu-label">Transactions</p>
 					<ul className="menu-list">
 						<li>
-							<a>History</a>
+							<NavLink to="/transactions" activeClassName="is-active-here">
+								History
+							</NavLink>
 						</li>
 						{/* <li>
 							<a>Transfers</a>
