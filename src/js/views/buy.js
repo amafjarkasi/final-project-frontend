@@ -11,7 +11,7 @@ const fcs_url = process.env.FCS_API_URL + "/";
 export const Buy = props => {
 	const { store, actions } = useContext(Context);
 	const [analyzedata, setAnalyzeData] = useState([]);
-	const [comparisons, setComparisons] = useState([]);
+	const [comparisons, setComparisons] = useState();
 	const [stockprice, setStockPrice] = useState("0");
 	const [comparePrice, setComparePrice] = useState("0");
 	const [getToasterPop, setToasterPop] = useState("0");
@@ -27,13 +27,18 @@ export const Buy = props => {
 		total_purchase: ""
 	});
 
-	// const handleChange = event => setBuyStock({ ...buyStock, [event.target.name]: event.target.value });
-
 	function popToaster() {
-		toaster.success("Your purchase has been successful!", {
-			description: "All purchases will be added to your transaction history.",
-			duration: 10
-		});
+		setComparisons(actions.buy(buyStock));
+		const getToasterPop = async () => {
+			if (store.display_success != 0 || store.display_success == 1 || comparisons != null) {
+				actions.popToasterSuccess();
+				setStore({ display_success: "0" });
+			} else if (store.display_success != 0 || store.display_success == 2 || comparisons != null) {
+				actions.popToasterFail();
+				setStore({ display_success: "0" });
+			}
+		};
+		getToasterPop();
 	}
 
 	function Analysis() {

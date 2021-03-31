@@ -171,15 +171,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 						if (!resp.ok) {
 							throw new Error(resp.statusText);
 						}
-						//getActions().popToasterSuccess();
 						return resp.json();
 					})
 					.then(data => {
+						setStore({ display_success: "1" });
 						return true;
 					})
 					.catch(err => {
 						console.error(err);
-						//getActions().popToasterFail();
+						setStore({ display_success: "2" });
 						return false;
 					});
 			},
