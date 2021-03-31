@@ -20,11 +20,11 @@ export const NavbarLeft = () => {
 								Profile
 							</NavLink>
 						</li>
-						<li>
+						{/* <li>
 							<NavLink to="/portfolio" activeClassName="is-active-here">
 								Portfolio
 							</NavLink>
-						</li>
+						</li> */}
 					</ul>
 					<p className="menu-label">Stock Research</p>
 					<ul className="menu-list">
@@ -69,12 +69,12 @@ export const NavbarLeft = () => {
 						<li>
 							<a>History</a>
 						</li>
-						<li>
+						{/* <li>
 							<a>Transfers</a>
 						</li>
 						<li>
 							<a>Balance</a>
-						</li>
+						</li> */}
 					</ul>
 				</aside>
 			</div>

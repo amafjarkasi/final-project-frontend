@@ -111,7 +111,7 @@ export const NewsLookup = () => {
 		sethideBuy(true);
 		setResults(false);
 	}
-	// https://financialmodelingprep.com/api/v3/stock_news?tickers=AAPL&limit=50&apikey=990e5576342d94ae68643280da08fa5b
+
 	function handleStockLookup(e) {
 		if (stocksymbol != "") {
 			axios

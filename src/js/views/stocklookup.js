@@ -58,7 +58,7 @@ export const StockLookup = () => {
 		var obj = stockfind.metric;
 		var rows = [];
 
-		const mapped = Object.entries(getStocks).map(([k, v]) => `${k}_${v}`);
+		const mapped = Object.entries(getStocks.metric).map(([k, v]) => `${k}_${v}`);
 		console.log(mapped);
 
 		if (!_.isEmpty(obj)) {
