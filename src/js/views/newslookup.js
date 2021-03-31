@@ -147,52 +147,50 @@ export const NewsLookup = () => {
 					<div className="container is-fluid pr-7">
 						<section className="section">
 							<h3 className="title is-3 pb-3 is-spaced">Company News Lookup</h3>
-							<div className="container pt-3 pr-7">
-								<div className="columns is-desktop">
-									<table className="table is-fullwidth">
-										<div className="box">
-											<div className="field has-addons is-medium">
-												<p className="control is-medium">
-													<input
-														id="inputStock"
-														className="input is-medium"
-														type="text"
-														placeholder="Stock symbol"
-														onChange={e => setStockSymbol(e.target.value)}
-													/>
-												</p>
-												<p className="control is-medium">
-													<button
-														className="button is-medium is-danger"
-														type="button"
-														data-toggle="tooltip"
-														data-placement="top"
-														title="Search"
-														onClick={handleStockLookup}>
-														<span className="icon">
-															<i className="fas fa-search" />
-														</span>
-													</button>
-												</p>
-												<p className="control is-medium">
-													<button
-														className="button is-medium is-warning"
-														type="button"
-														data-toggle="tooltip"
-														data-placement="top"
-														title="Clear"
-														onClick={clearStockLookup}>
-														<span className="icon">
-															<i className="fas fa-trash-alt" />
-														</span>
-													</button>
-												</p>
-												{results ? <BuyStock /> : ""}
-											</div>
+							<div className="container pr-7">
+								<table className="table is-fullwidth">
+									<div className="box is-fullwidth">
+										<div className="field has-addons is-medium">
+											<p className="control is-medium">
+												<input
+													id="inputStock"
+													className="input is-medium"
+													type="text"
+													placeholder="Stock symbol"
+													onChange={e => setStockSymbol(e.target.value)}
+												/>
+											</p>
+											<p className="control is-medium">
+												<button
+													className="button is-medium is-danger"
+													type="button"
+													data-toggle="tooltip"
+													data-placement="top"
+													title="Search"
+													onClick={handleStockLookup}>
+													<span className="icon">
+														<i className="fas fa-search" />
+													</span>
+												</button>
+											</p>
+											<p className="control is-medium">
+												<button
+													className="button is-medium is-warning"
+													type="button"
+													data-toggle="tooltip"
+													data-placement="top"
+													title="Clear"
+													onClick={clearStockLookup}>
+													<span className="icon">
+														<i className="fas fa-trash-alt" />
+													</span>
+												</button>
+											</p>
+											{results ? <BuyStock /> : ""}
 										</div>
-										{!results ? "" : <LookupNews />}
-									</table>
-								</div>
+									</div>
+									{!results ? "" : <LookupNews />}
+								</table>
 							</div>
 						</section>
 					</div>

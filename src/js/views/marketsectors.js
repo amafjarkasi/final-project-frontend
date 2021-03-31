@@ -54,7 +54,7 @@ export const MarketSectors = () => {
 								</button>
 							</Link> */}
 							<br />
-							<div className="container pt-6 pr-7">
+							<div className="container pt-4 pr-7">
 								<div className="columns is-desktop">
 									<table className="table is-fullwidth">
 										<thead className="thead-dark is-fullwidth">
