@@ -81,7 +81,7 @@ export const StockLookup = () => {
 					<div className="box">
 						<div className="list pb-5">
 							<h4 className="title is-4 pt-5 pb-3 is-spaced has-text-danger has-text-centered">
-								Annual Basic Financials
+								Basic Financials (Annual)
 							</h4>
 							<table className="table is-fullwidth">
 								<thead className="thead-dark is-fullwidth has-text-centered">
