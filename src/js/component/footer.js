@@ -32,7 +32,7 @@ export const Footer = () => (
 								Features
 							</Link>
 						</li>
-						<li>
+						{/* <li>
 							<a href="#">Enterprise</a>
 						</li>
 						<li>
@@ -40,7 +40,7 @@ export const Footer = () => (
 						</li>
 						<li>
 							<a href="#">ICO</a>
-						</li>
+						</li> */}
 					</ul>
 				</div>
 				<div className="column has-text-black">

@@ -36,9 +36,9 @@ export const Navbar = () => {
 								<Link to="/profile" className="navbar-item navbar-item-dropdown">
 									Profile
 								</Link>
-								<Link to="/portfolio" className="navbar-item navbar-item-dropdown">
+								{/* <Link to="/portfolio" className="navbar-item navbar-item-dropdown">
 									Portfolio
-								</Link>
+								</Link> */}
 								<Link to="/contact" className="navbar-item navbar-item-dropdown">
 									Contact Us
 								</Link>
