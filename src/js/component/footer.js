@@ -32,6 +32,11 @@ export const Footer = () => (
 								Features
 							</Link>
 						</li>
+						<li>
+							<Link to="/pricing" className="has-text-black">
+								Pricing
+							</Link>
+						</li>
 						{/* <li>
 							<a href="#">Enterprise</a>
 						</li>
@@ -54,11 +59,6 @@ export const Footer = () => (
 						<li>
 							<Link to="/signup" className="has-text-black">
 								Sign Up
-							</Link>
-						</li>
-						<li>
-							<Link to="/pricing" className="has-text-black">
-								Pricing
 							</Link>
 						</li>
 						<li>
