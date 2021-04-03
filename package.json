@@ -1,7 +1,7 @@
 {
 	"name": "react-hello-webapp",
 	"engines": {
-		"node": "10.x"
+		"node": "14.x"
 	},
 	"version": "1.0.1",
 	"description": "",
@@ -107,6 +107,7 @@
 		"hover.css": "^2.3.2",
 		"lightweight-charts": "^3.3.0",
 		"lodash": "^4.17.21",
+		"modclean": "^3.0.0-beta.1",
 		"native-request": "^1.0.8",
 		"node-fetch": "^2.6.1",
 		"prop-types": "^15.7.2",
