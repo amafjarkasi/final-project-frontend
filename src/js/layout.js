@@ -1,11 +1,9 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
-
+import injectContext from "./store/appContext";
 import { Home } from "./views/home";
 import { Login } from "./views/login";
-import { Investments } from "./views/investments";
-import { Forecast } from "./views/forecast";
 import { Signup } from "./views/signup";
 import { ContactTeam } from "./views/contact";
 import { PricingTable } from "./views/pricing";
@@ -18,8 +16,6 @@ import { Footer } from "./component/footer";
 import { AggIndicator } from "./component/aggindicator";
 import { MarketNews } from "./component/marketnews";
 import { KeyExecutives } from "./component/keyexecutives";
-
-import injectContext from "./store/appContext";
 import { Dashboard } from "./views/dashboard";
 import { MostGainer } from "./views/mostgainer";
 import { MostLoser } from "./views/mostloser";
@@ -49,8 +45,6 @@ const Layout = () => {
 						<Route exact path="/" component={Home} />
 						<Route exact path="/login" component={Login} />
 						<Route exact path="/signup" component={Signup} />
-						<Route exact path="/investments" component={Investments} />
-						<Route exact path="/forecast" component={Forecast} />
 						<Route exact path="/profile" component={Profile} />
 						<Route exact path="/dashboard" component={Dashboard} />
 						<Route exact path="/mostgainer" component={MostGainer} />
@@ -59,7 +53,6 @@ const Layout = () => {
 						<Route exact path="/transactions" component={Transactions} />
 						<Route exact path="/marketsectors" component={MarketSectors} />
 						<Route exact path="/gainercomparison" component={GainerComparison} />
-						<Route exact path="/sectorcomparison" component={SectorComparison} />
 						<Route exact path="/portfolio" component={Portfolio} />
 						<Route exact path="/marketnews" component={MarketNews} />
 						<Route exact path="/contact" component={ContactTeam} />
