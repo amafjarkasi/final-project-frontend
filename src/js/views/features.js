@@ -14,7 +14,7 @@ export const Features = () => (
 							</span>
 						</div>
 						<h3 className="title">Security</h3>
-						<p>Your data is virtually unhackable compared to traditional net</p>
+						<p>Your data is safe compared to our traditional services</p>
 					</div>
 					<div className="column is-4">
 						<div className="block">
@@ -23,7 +23,7 @@ export const Features = () => (
 							</span>
 						</div>
 						<h3 className="title">Privacy</h3>
-						<p>Nobody is tracking you when your activity when you use investico</p>
+						<p>Our app doesnt track your financial records</p>
 					</div>
 					<div className="column is-4">
 						<div className="block">
@@ -31,8 +31,8 @@ export const Features = () => (
 								3
 							</span>
 						</div>
-						<h3 className="title">Speed</h3>
-						<p>Previously unimaginable analysis thanks to direct brokerage information</p>
+						<h3 className="title">Analysis</h3>
+						<p>We analyze stocks by using different models of info</p>
 					</div>
 				</div>
 			</div>
