@@ -13,11 +13,9 @@ export const Dashboard = () => {
 				<div className="column is-10-tablet">
 					<div className="container is-fluid pr-7">
 						<section className="section">
-							{/* <div className="container"> */}
 							<div className="box">
 								<MarketNews />
 							</div>
-							{/* </div> */}
 						</section>
 					</div>
 				</div>
