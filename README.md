@@ -1,7 +1,7 @@
 # Investico Financial - Research & Analysis
 
 <p align="center">
-<a href="https://www.loom.com/share/f37c6838b3f1496c95111e515e83dd9b"><img src="https://github.com/4GeeksAcademy/react-hello-webapp/blob/master/src/img/how-to.png?raw=true" /></a>
+<a href="https://gifyu.com/image/AL95"><img src="https://s6.gifyu.com/images/Animation24ea3ee7cf53e565.gif" alt="Animation24ea3ee7cf53e565.gif" /></a>
 </p>
 
 
