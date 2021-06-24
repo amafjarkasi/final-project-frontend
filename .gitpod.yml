@@ -1,3 +1,4 @@
+
 ports:
     - port: 3000
       onOpen: open-browser
@@ -8,3 +9,6 @@ tasks:
         cp .env.example .env
       command: >
         npm i vercel -g
+vscode:
+  extensions:
+    - divlo.vscode-styled-jsx-syntax

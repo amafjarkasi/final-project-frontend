@@ -1,5 +1,5 @@
 import { Portfolio } from "../views/portfolio";
-import { toaster } from "evergreen-ui";
+import { Toaster, Alert } from "evergreen-ui";
 
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
@@ -67,13 +67,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 						return false;
 					});
 			},
-			// exampleFunction: () => {
-			// 	getActions().changeColor(0, "green");
-			// },
 			popToasterSuccess: () => {
 				const store = getStore();
 				const actions = getActions();
-				console.log("!! success");
 				toaster.success("Your purchase has been successful!", {
 					description: "All purchases will be added to your transaction history.",
 					duration: 10
@@ -83,7 +79,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			popToasterFail: () => {
 				const store = getStore();
 				const actions = getActions();
-				console.log("!! failed");
 				toaster.danger("Your purchase has failed!", {
 					description: "Please try your purchase again in a few minutes.",
 					duration: 10
@@ -204,11 +199,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 			},
 			changeColor: (index, color) => {
-				//get the store
 				const store = getStore();
-
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
 				const demo = store.demo.map((elm, i) => {
 					if (i === index) elm.background = color;
 					return elm;

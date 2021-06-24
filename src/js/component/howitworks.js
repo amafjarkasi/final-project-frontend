@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Switch, Route, Link, NavLink, useParams } from "react-router-dom";
+import { LinkContainer } from "react-router-bootstrap";
 
 export const Howitworks = () => (
 	<section className="section">
@@ -7,17 +9,19 @@ export const Howitworks = () => (
 				<div className="column is-6">
 					<h2 className="title">How it works</h2>
 					<h3 className="title is-5">{`Answer Three Simple Questions!`}</h3>
-					<p className="subtitle is-6">
-						{`We've designed a simple, efficient process for companies migrating to PiperNet. Here's how it
+					<p className="subtitle is-6 pr-5">
+						{`We've designed a simple, efficient process for companies migrating to Investico.`}
+						<br />
+						{`Here's how it
 						works.`}
 					</p>
 					<div className="buttons">
-						<a className="button is-success" href="#">
+						<Link to="/signup" className="button is-success">
 							Start Setup!
-						</a>
-						<a className="button is-text" href="#">
+						</Link>
+						<Link to="/signup" className="button is-text">
 							Watch more
-						</a>
+						</Link>
 					</div>
 				</div>
 				<div className="column is-6">
@@ -29,7 +33,7 @@ export const Howitworks = () => (
 							<div className="content">
 								<h3>Move Data</h3>
 								<p>
-									Using our Piper Assistant application, you can move your data to be stored our
+									Using our Investico application, you can move your data to be stored our
 									decentralized network with simple drag & drop.
 								</p>
 							</div>
