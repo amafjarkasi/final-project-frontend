@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-<a href="https://recordit.co/GFEdd766Gh" target="_blank"><img src="https://recordit.co/GFEdd766Gh" alt="Stock Rating" border="0"></a>
+<a href="https://recordit.co/GFEdd766Gh" target="_blank"><img src="http://g.recordit.co/GFEdd766Gh.gif" alt="Stock Rating" border="0"></a>
 </p>
 
 <p align="center">
