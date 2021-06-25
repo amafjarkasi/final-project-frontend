@@ -3,7 +3,7 @@
 ### Summary:
 <p align="center">Investico has the capability of doing in-depth and detailed research on stocks, viewing top stocks/sectors, looking up market news on specific stocks and getting definitive analysis on your stock searches. The application was coded in React, JavaScript, Bulma UI, HTML/CSS and backend is in Python/Flask.</p>
 
-
+### Screencasts:
 <p align="center">
 <a href="https://recordit.co/1QjPh5EENE" target="_blank"><img src="http://g.recordit.co/1QjPh5EENE.gif" alt="Homepage" border="0"></a>
 </p>
@@ -35,6 +35,16 @@
 <p align="center">
 <a href="https://recordit.co/piX0Kz6Qpq" target="_blank"><img src="http://g.recordit.co/piX0Kz6Qpq.gif" alt="Most Active" border="0"></a>
 </p>
+
+<p align="center">
+<a href="https://recordit.co/RTIYaDbmBu" target="_blank"><img src="http://g.recordit.co/RTIYaDbmBu.gif" alt="Most Gainer" border="0"></a>
+</p>
+
+<p align="center">
+<a href="https://recordit.co/cljugKR7uB" target="_blank"><img src="http://g.recordit.co/cljugKR7uB.gif" alt="Most Loser" border="0"></a>
+</p>
+
+
 
 
 
