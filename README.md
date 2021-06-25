@@ -13,11 +13,11 @@
 </p>
 
 <p align="center">
-<a href="https://recordit.co/GFEdd766Gh" target="_blank"><img src="http://g.recordit.co/3Zrdc7YFg3.gif" alt="Stock Rating" border="0"></a>
+<a href="https://recordit.co/GFEdd766Gh" target="_blank"><img src="https://recordit.co/GFEdd766Gh" alt="Stock Rating" border="0"></a>
 </p>
 
 <p align="center">
-<a href="https://recordit.co/3Zrdc7YFg3" target="_blank"><img src="http://g.recordit.co/3Zrdc7YFg3.gif" alt="Stock Rating" border="0"></a>
+<a href="https://recordit.co/3Zrdc7YFg3" target="_blank"><img src="http://g.recordit.co/3Zrdc7YFg3.gif" alt="News Lookup" border="0"></a>
 </p>
 
 
