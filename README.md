@@ -13,6 +13,10 @@
 </p>
 
 <p align="center">
+<a href="https://recordit.co/vFb8jbXQR4" target="_blank"><img src="http://g.recordit.co/vFb8jbXQR4.gif" alt="Technical Analysis" border="0"></a>
+</p>
+
+<p align="center">
 <a href="https://recordit.co/2pgZvyq9pT" target="_blank"><img src="http://g.recordit.co/2pgZvyq9pT.gif" alt="Stock Lookup" border="0"></a>
 </p>
 
@@ -26,6 +30,10 @@
 
 <p align="center">
 <a href="https://recordit.co/7hdcIR8fre" target="_blank"><img src="http://g.recordit.co/7hdcIR8fre.gif" alt="Market Sectors" border="0"></a>
+</p>
+
+<p align="center">
+<a href="https://recordit.co/piX0Kz6Qpq" target="_blank"><img src="http://g.recordit.co/piX0Kz6Qpq.gif" alt="Most Active" border="0"></a>
 </p>
 
 
