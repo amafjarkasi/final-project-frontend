@@ -8,6 +8,15 @@
 <a href="https://recordit.co/1QjPh5EENE"><img src="http://g.recordit.co/1QjPh5EENE.gif" alt="Homepage" border="0"></a>
 </p>
 
+<p align="center">
+<a href="https://recordit.co/GEIFeG4xe7"><img src="http://g.recordit.co/GEIFeG4xe7.gif" alt="Dashboard/Profile" border="0"></a>
+</p>
+
+<p align="center">
+<a href="https://recordit.co/GEIFeG4xe7"><img src="http://g.recordit.co/GEIFeG4xe7.gif" alt="Stock Lookup" border="0"></a>
+</p>
+
+
 
 ### Requirements:
 - Make sure you are using node version 10
