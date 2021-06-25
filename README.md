@@ -1,4 +1,4 @@
-# Investico Financial - Stock Research & Analysis
+# 📈 Investico Financial - Stock Research & Analysis
 
 ### Summary:
 <p align="center">Investico has the capability of doing in-depth and detailed research on stocks, viewing top stocks/sectors, looking up market news on specific stocks and getting definitive analysis on your stock searches. The application was coded in React, JavaScript, Bulma UI, HTML/CSS and backend is in Python/Flask.</p>
