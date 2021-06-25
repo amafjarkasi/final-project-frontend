@@ -20,6 +20,9 @@
 <a href="https://recordit.co/3Zrdc7YFg3" target="_blank"><img src="http://g.recordit.co/3Zrdc7YFg3.gif" alt="News Lookup" border="0"></a>
 </p>
 
+<p align="center">
+<a href="https://recordit.co/7hdcIR8fre" target="_blank"><img src="http://g.recordit.co/7hdcIR8fre.gif" alt="Market Sectors" border="0"></a>
+</p>
 
 
 ### Requirements:
