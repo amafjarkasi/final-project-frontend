@@ -5,15 +5,19 @@
 
 
 <p align="center">
-<a href="https://recordit.co/1QjPh5EENE"><img src="http://g.recordit.co/1QjPh5EENE.gif" alt="Homepage" border="0"></a>
+<a href="https://recordit.co/1QjPh5EENE" target="_blank"><img src="http://g.recordit.co/1QjPh5EENE.gif" alt="Homepage" border="0"></a>
 </p>
 
 <p align="center">
-<a href="https://recordit.co/GEIFeG4xe7"><img src="http://g.recordit.co/GEIFeG4xe7.gif" alt="Dashboard/Profile" border="0"></a>
+<a href="https://recordit.co/GEIFeG4xe7" target="_blank"><img src="http://g.recordit.co/GEIFeG4xe7.gif" alt="Dashboard/Profile" border="0"></a>
 </p>
 
 <p align="center">
-<a href="https://recordit.co/GEIFeG4xe7"><img src="http://g.recordit.co/GEIFeG4xe7.gif" alt="Stock Lookup" border="0"></a>
+<a href="https://recordit.co/GFEdd766Gh" target="_blank"><img src="http://g.recordit.co/3Zrdc7YFg3.gif" alt="Stock Rating" border="0"></a>
+</p>
+
+<p align="center">
+<a href="https://recordit.co/3Zrdc7YFg3" target="_blank"><img src="http://g.recordit.co/3Zrdc7YFg3.gif" alt="Stock Rating" border="0"></a>
 </p>
 
 
