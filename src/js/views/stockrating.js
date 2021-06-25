@@ -79,14 +79,12 @@ export const StockRating = () => {
 								<p>
 									<Pane
 										display="flex"
-										className="has-text-centered are-medium is-justify-content-center">
-										<Pane flexBasis={300} className="are-medium">
-											<Badge color="red" isSolid marginRight={8}>
+										className="has-text-centered are-large is-justify-content-center">
+										<Pane flexBasis={300} className="are-large">
+											<Badge color="red" marginRight={8}>
 												Recommendation: {stockfind.recommendation}
 											</Badge>
-											<Badge color="blue" isSolid>
-												Rating: {stockfind.rating}
-											</Badge>
+											<Badge color="blue">Rating: {stockfind.rating}</Badge>
 										</Pane>
 									</Pane>
 								</p>
