@@ -1,7 +1,7 @@
 # Investico Financial - Research & Analysis
 
 <p align="center">
-<a href="https://gifyu.com/image/AL95"><img src="https://s6.gifyu.com/images/Animation24ea3ee7cf53e565.md.gif" alt="Animation24ea3ee7cf53e565.gif" border="0" /></a>
+<a href="https://ibb.co/BgNH9Vg"><img src="https://i.ibb.co/4jdwHZj/Animation.gif" alt="Animation" border="0"></a>
 </p>
 
 

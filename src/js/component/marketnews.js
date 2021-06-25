@@ -28,8 +28,8 @@ export const MarketNews = () => {
 								<div className="row mb-0 pb-2">
 									<article className="media is-small mb-0 pb-0" key={index}>
 										<figure className="media-left">
-											<p className="image is-128x128">
-												<img lassName="image is-128x128" src={news.image} />
+											<p className="image is-96x96">
+												<img className="image is-96x96" src={news.image} />
 											</p>
 										</figure>
 										<div className="media-content">
@@ -39,8 +39,8 @@ export const MarketNews = () => {
 														<strong>{news.headline}</strong>
 													</a>
 													<br />
-													{news.summary.length > 145
-														? news.summary.slice(0, 145) + "..."
+													{news.summary.length > 135
+														? news.summary.slice(0, 135) + "..."
 														: news.summary}
 													<br />
 													<div className="pt-3">
